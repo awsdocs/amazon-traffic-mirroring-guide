@@ -41,8 +41,8 @@ Create a Traffic Mirror filter \(Filter 1\) with the following inbound rule for 
 | --- | --- | 
 | Rule action | Accept | 
 | Protocol | TCP | 
-| Source port range | All | 
-| Destination port range | All | 
+| Source port range |  | 
+| Destination port range |  | 
 | Source CIDR block | 0\.0\.0\.0/0 | 
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | TCP Rule | 
@@ -58,7 +58,7 @@ Create a Traffic Mirror filter \(Filter 2\) with the following inbound rule for 
 | --- | --- | 
 | Rule action | Accept | 
 | Protocol | UDP | 
-|  |  | 
+| Source port range |  | 
 | Destination port range |  | 
 | Source CIDR block | 0\.0\.0\.0/0 | 
 | Destination CIDR block | 0\.0\.0\.0/0 | 

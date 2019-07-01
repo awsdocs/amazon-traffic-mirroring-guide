@@ -28,7 +28,7 @@ Create a Traffic Mirror filter \(Filter 1\) that has the following inbound rule\
 | Rule action | Accept | 
 | Protocol | TCP | 
 | Source port range |  | 
-| Destination port rang |  | 
+| Destination port range |  | 
 | Source CIDR block | 0\.0\.0\.0/0 | 
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | TCP Rule | 
