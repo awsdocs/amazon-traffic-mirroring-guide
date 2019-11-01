@@ -22,6 +22,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Traffic Mirroring Examples](Traffic_Mirroring_Scenarios.md)
    + [Example: Mirror Inbound TCP Traffic to a Single Monitoring Appliance](tm-example-inbound-tcp.md)
    + [Example: Mirror Inbound TCP and UDP Traffic to Two Different Appliances](tm-example-inbound-tcp-udp.md)
+   + [Example: Mirror Non-VPC Traffic](tm-example-non-vpc.md)
 + [Working with Open-Source Tools for Traffic Mirroring](tm-example-open-source.md)
 + [Working with Traffic Mirroring](working-with-traffic-mirroring.md)
    + [Traffic Mirror Targets](traffic-mirroring-target.md)

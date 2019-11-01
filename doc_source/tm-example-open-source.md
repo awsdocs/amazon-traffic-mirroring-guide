@@ -8,42 +8,39 @@ These open\-source tools support VXLAN decapsulation, and they can be used at sc
 
 The following example uses the Suricata open\-source tool\. You can follow similar steps for Zeek\.
 
-Consider the scenario where you want to mirror inbound TCP traffic on an instance and send the traffic to an instance that has the Suricata software installed\. You need the following Traffic Mirror entities for this example:
+Consider the scenario where you want to mirror inbound TCP traffic on an instance and send the traffic to an instance that has the Suricata software installed\. You need the following traffic mirror entities for this example:
 + An EC2 instance with the Suricata software installed on it
-+ A Traffic Mirror target for the EC2 instance \(Target A\)
-+ A Traffic Mirror filter with a Traffic Mirror rule for the TCP inbound traffic \(Filter rule 1\)
-+ A Traffic Mirror session that has the following:
-  + A Traffic Mirror source
-  + A Traffic Mirror target for the appliance
-  + A Traffic Mirror filter with a Traffic Mirror rule for the TCP inbound traffic
++ A traffic mirror target for the EC2 instance \(Target A\)
++ A traffic mirror filter with a traffic mirror rule for the TCP inbound traffic \(Filter rule 1\)
++ A traffic mirror session that has the following:
+  + A traffic mirror source
+  + A traffic mirror target for the appliance
+  + A traffic mirror filter with a traffic mirror rule for the TCP inbound traffic
 
 ## Step 1: Install the Suricata Software on the EC2 Instance Target<a name="tm-example-open-source-install-software"></a>
 
-Launch an EC2 instance, and then install the Suricata software on it by using the following commands:
+Launch an EC2 instance, and then install the Suricata software on it by using the following commands\.
 
 ```
-sudo yum -y install git
-git clone https://github.com/kramse/suricata.git
-cd suricata
-git clone https://github.com/OISF/libhtp
-./autogen
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-lua --enable-geoip
-make
-sudo make install
-sudo make install-conf
-sudo ldconfig
-suricata --build-info
+# Become sudo
+sudo -s
+# Install epel-release
+amazon-linux-extras install -y epel
+# Install suricata
+yum install -y suricata
+# Create the default suricata rules directory
+mkdir /var/lib/suricata/rules
+# Add a rule to match all UDP traffic
+echo 'alert udp any any -> any any (msg:"UDP traffic detected"; sid:200001; rev:1;)' > /var/lib/suricata/rules/suricata.rules
+# Start suricata listening on eth0 in daemon mode
+suricata -c /etc/suricata/suricata.yaml -k none -i eth0 -D
 
-    * Create an rule in Suricata to generate alert on TCP traffic
-
-sudo vim /var/lib/suricata/rules/suricata.rules
-alert tcp any any -> any any (msg:"Test traffic detected"; sid:200001; rev:1;)
-sudo suricata -c /etc/suricata/suricata.yaml -D -k none -i eth1
+# Capture logs can be found in /var/log/suricata/fast.log
 ```
 
 ## Step 2: Create a Traffic Mirror Target<a name="tm-example-open-source-step-create-target"></a>
 
-Create a Traffic Mirror target \(Target A\) for the EC2 instance\. Depending on your configuration, the target is one of the following types:
+Create a traffic mirror target \(Target A\) for the EC2 instance\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one\.
 
@@ -51,7 +48,7 @@ For more information, see [Create a Traffic Mirror Target](traffic-mirroring-tar
 
 ## Step 3: Create a Traffic Mirror Filter<a name="tm-example-open-source-step-create-filter"></a>
 
-Create a Traffic Mirror filter \(Filter 1\) with the following inbound rule\. For more information, see [Create a Traffic Mirror Filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\.
+Create a traffic mirror filter \(Filter 1\) with the following inbound rule\. For more information, see [Create a Traffic Mirror Filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\.
 
 
 **Traffic Mirror Filter Rule for Inbound TCP Traffic**  
@@ -68,7 +65,7 @@ Create a Traffic Mirror filter \(Filter 1\) with the following inbound rule\. Fo
 
 ## Step 4: Create a Traffic Mirror Session<a name="tm-example-open-source-step-create-session"></a>
 
-Create and configure a Traffic Mirror session with the following options\. For more information, see [Create a Traffic Mirror Session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
+Create and configure a traffic mirror session with the following options\. For more information, see [Create a Traffic Mirror Session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
 
 
 **Traffic Mirror Session to Monitor Inbound TCP Traffic**  

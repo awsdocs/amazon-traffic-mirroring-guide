@@ -2,9 +2,13 @@
 
 ## <a name="traffic-mirror-session-policy"></a>
 
-To allow access to Traffic Mirror resources, you must create and attach an IAM policy to the IAM user or the group to which the IAM user belongs\. The IAM user must be given permission to use the specific Traffic Mirror resources and API actions they need\. When you attach a policy to a user or group of users, it allows or denies permission to perform the specified tasks on the specified resources\. 
+To allow access to traffic mirror resources, you create and attach an IAM policy either to:
++ The IAM user or
++ The group to which the IAM user belongs\.
 
-You can also use resource\-level permissions to restrict what resources users can use when they invoke APIs\. For example, the following IAM policy restricts the Traffic Mirror target tmt\-12345645678 that can be used in a `CreateTrafficMirrorSession` API call by a user:
+The IAM user must be given permission to use the specific traffic mirror resources and API actions they need\. When you attach a policy to a user or group of users, it allows or denies permission to perform specified tasks on specified resources\. 
+
+You can also use resource\-level permissions to restrict what resources users can use when they invoke APIs\. For example, the following IAM policy restricts the traffic mirror target `tmt-12345645678` that can be used in a `CreateTrafficMirrorSession` API call by a user\.
 
 **Example Example: CreateTrafficMirrorSession Policy**  
 
@@ -24,8 +28,3 @@ You can also use resource\-level permissions to restrict what resources users ca
      ]
 }
 ```
-
-All Traffic Mirror APIs support tag\-based authentication\. For information about the Amazon EC2 resource\-level permissions, see [Supported Resource\-Level Permissions for Amazon EC2 API Actions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html) in the *Amazon EC2 User Guide for Linux Instances*\.
-
-**Note**  
-The Network Load Balancer in the `CreateTrafficMirrorTarget` API does not support tag\-based authorization\.
