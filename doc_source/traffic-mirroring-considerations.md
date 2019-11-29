@@ -38,7 +38,7 @@ The following are the Traffic Mirroring limits for your AWS account\. Unless ind
 
 The following limits apply to traffic mirror sessions:
 + Maximum number of sessions per account: 10,000
-+ Maximum number of sessions on a network interface: 3
++ Maximum number of sessions on a traffic mirror source network interface: 3
 
 ### <a name="traffic-mirroring-target-limits"></a>
 

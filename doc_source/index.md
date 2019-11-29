@@ -29,5 +29,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Cross-Account Traffic Mirror Targets](cross-account-traffic-mirroring-targets.md)
    + [Traffic Mirror Filters](traffic-mirroring-filter.md)
    + [Traffic Mirror Sessions](traffic-mirroring-session.md)
++ [Monitoring Mirrored Traffic Using Amazon CloudWatch](traffic-mirror-cloudwatch.md)
 + [Traffic Mirroring Limits and Considerations](traffic-mirroring-considerations.md)
 + [Document History for Traffic Mirroring](doc-history.md)
