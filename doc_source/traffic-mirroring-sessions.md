@@ -1,8 +1,12 @@
-# Traffic Mirroring Packet Format<a name="traffic-mirroring-sessions"></a>
+# Traffic Mirror Sessions<a name="traffic-mirroring-sessions"></a>
 
-Mirrored traffic is encapsulated with a VXLAN header\. All appliances that receive traffic directly with this feature should be able parse a VXLAN\-encapsulated packet\. For more information about the VXLAN protocol, see [RFC 7348](https://tools.ietf.org/html/rfc7348)\.
+A *traffic mirror* session establishes a relationship between a traffic mirror source and a traffic mirror target\.
 
-The following fields apply to Traffic Mirroring:
-+ **VXLAN ID** — The virtual network ID that you can assign to a traffic mirror session\. If you do not assign a value, we assign a random value that is unique to all sessions in the account\.
-+ **Source IP address** — The primary IP address of the source network interface\. 
-+ **Destination IP address** — The primary IP address of the appliance, or the Network Load Balancer when the appliance is deployed behind one\. 
+A traffic mirror session contains the following resources:
++ A traffic mirror source
++ A traffic mirror target 
++ A traffic mirror filter
+
+A given packet is only mirrored one time\. However, you can use multiple traffic mirror sessions on the same source\. This is useful if you want to send a subset of the mirrored traffic from a traffic mirror source to different tools\. For example, you can filter HTTP traffic in a higher priority traffic mirror session and send it to a specific monitoring appliance\. At the same time, you can filter all other TCP traffic in a lower priority traffic mirror session and send it to another monitoring appliance\.
+
+Traffic mirror sessions are evaluated based on the ascending session number that you define when you create the session\. 

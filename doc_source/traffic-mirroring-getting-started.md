@@ -12,10 +12,10 @@ The following tasks help you to become familiar with traffic mirror targets, fil
 + Make sure that the traffic mirror source and traffic mirror target are either: 
   + In the same VPC, or
   + In different VPCs that are connected via VPC peering or a transit gateway\.
-+ Make sure that the traffic mirror target instance allows traffic to port 4789\.
++ Make sure that the traffic mirror target instance allows traffic to UDP port 4789\.
 + Make sure that the traffic mirror source has a route table entry for the traffic mirror target\.
 + Make sure that there are no security group rules or network ACL rules on the traffic mirror target that drop the mirrored traffic from the traffic mirror source\.
-+ Review the Traffic Mirroring considerations\. For more information, see [Traffic Mirroring Limits and Considerations](traffic-mirroring-considerations.md)\.
++ Review the Traffic Mirroring considerations\. For more information, see [Traffic Mirroring Service Quotas and Considerations](traffic-mirroring-considerations.md)\.
 
 ## Step 1: Create the Traffic Mirror Target<a name="step-create-traffic-mirroring-target"></a>
 

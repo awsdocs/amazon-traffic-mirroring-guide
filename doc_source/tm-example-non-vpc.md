@@ -1,4 +1,4 @@
-# Example: Mirror Non\-VPC Traffic<a name="tm-example-non-vpc"></a>
+# Example: Mirror Non\-Local VPC Traffic<a name="tm-example-non-vpc"></a>
 
 Consider the scenario where you want to monitor traffic leaving your VPC or traffic whose source is outside your VPC\. In this case, you will mirror all traffic except traffic passing within your VPC and send it to a single monitoring appliance\. You need the following traffic mirror resources: 
 + A traffic mirror target for the appliance \(Target A\)

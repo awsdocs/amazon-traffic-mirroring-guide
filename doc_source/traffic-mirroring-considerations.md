@@ -1,4 +1,4 @@
-# Traffic Mirroring Limits and Considerations<a name="traffic-mirroring-considerations"></a>
+# Traffic Mirroring Service Quotas and Considerations<a name="traffic-mirroring-considerations"></a>
 
 Take the following information into consideration when you use Traffic Mirroring:
 + Encapsulated mirror traffic is routed by using the VPC route table\. Make sure that your route table is configured to send the mirrored traffic to the correct traffic mirror target\. 
@@ -30,22 +30,22 @@ Not all traffic can be mirrored\. The following traffic types cannot be mirrored
 + NTP
 + Windows activation
 
-## Traffic Mirroring Limits<a name="traffic-mirroring-limits"></a>
+## Traffic Mirroring Service Quotas<a name="traffic-mirroring-limits"></a>
 
-The following are the Traffic Mirroring limits for your AWS account\. Unless indicated otherwise, you can request a limit increase by using the [Amazon VPC limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc)\. 
+The following are the Traffic Mirroring service quotas for your AWS account\. Unless indicated otherwise, you can request an increase by using the [Amazon VPC limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc)\. For more information about service quotas, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
 
 ### <a name="traffic-mirroring-session-limits"></a>
 
-The following limits apply to traffic mirror sessions:
+The following quotas apply to traffic mirror sessions:
 + Maximum number of sessions per account: 10,000
 + Maximum number of sessions on a traffic mirror source network interface: 3
 
 ### <a name="traffic-mirroring-target-limits"></a>
 
-The following limits apply to traffic mirror targets:
+The following quotas apply to traffic mirror targets:
 + Maximum number of traffic mirror targets per account: 10,000
 
-The following limits apply to a traffic mirror source to traffic mirror target ratio:
+The following quotas apply to a traffic mirror source to traffic mirror target ratio:
 + Maximum number of mirror sources per Network Load Balancer: No limit
 + Maximum number of mirror sources per a Dedicated instance type as target: 100
   + C3\.8XL
@@ -67,7 +67,7 @@ The following limits apply to a traffic mirror source to traffic mirror target r
 
    Maximum number of mirror sources per a non\-dedicated instance type as target: 10
 
-The following limits apply to traffic mirror filters:
+The following quotas apply to traffic mirror filters:
 + Maximum number of rules per filter: 10
 
 ## Checksum Offloading<a name="traffic-checksum-offloading"></a>
