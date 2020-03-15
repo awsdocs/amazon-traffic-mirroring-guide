@@ -78,7 +78,7 @@ Create the following inbound rules:
 | Protocol | All | 
 | Source port range |  | 
 | Destination port range |  | 
-| Source CIDR block | 0\.0\.0\.0\.0/0 | 
+| Source CIDR block | 0\.0\.0\.0/0 | 
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | Accept all inbound traffic | 
 
