@@ -1,4 +1,4 @@
-# Traffic Mirroring Packet Format<a name="traffic-mirroring-packet-formats"></a>
+# Traffic Mirroring packet format<a name="traffic-mirroring-packet-formats"></a>
 
 Mirrored traffic is encapsulated with a VXLAN header\. All appliances that receive traffic directly with this feature should be able parse a VXLAN\-encapsulated packet\. For more information about the VXLAN protocol, see [RFC 7348](https://tools.ietf.org/html/rfc7348)\.
 

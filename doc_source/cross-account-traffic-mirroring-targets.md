@@ -1,18 +1,20 @@
-# Cross\-Account Traffic Mirror Targets<a name="cross-account-traffic-mirroring-targets"></a>
+# Cross\-account traffic mirror targets<a name="cross-account-traffic-mirroring-targets"></a>
 
 A traffic mirror target can be owned by an AWS account that is different from the traffic mirror source\.
 
-Before you can use a cross\-account traffic mirror target, the traffic mirror target owner shares the target with you by using the AWS Resource Access Manager\. When you are in different AWS Organizations from the owner, after the owner shares the traffic mirror target, you accept the share request\. After you accept the share request, you can use the traffic mirror target in a traffic mirror session\. You can only create a traffic mirror session if you are the owner of the source network interface or its subnet\. 
+Before you can use a cross\-account traffic mirror target, the traffic mirror target owner shares the target with you by using the AWS Resource Access Manager\. When you are in different AWS Organizations from the owner, after the owner shares the traffic mirror target, you accept the share request\. After you accept the share request, you can use the traffic mirror target in a traffic mirror session\. 
 
 The traffic mirror target is visible to shared accounts in their `DescribeTrafficMirrorTarget` API calls\. Only the traffic mirror target owner can modify or delete the traffic mirror target\.
 
 Traffic mirror sessions that are created in a different account than the traffic mirror target are visible in `DescribeTrafficMirrorSession` API calls that are made by the traffic mirror target owner\.
 
-## Sharing a Traffic Mirror Target<a name="tm-sharing"></a>
+
+
+## Sharing a traffic mirror target<a name="tm-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a traffic mirror target across accounts\. Use the following procedure to share a traffic mirror target that you own\.
 
-You must create a traffic mirror target before you share it\. For more information, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+You must create a traffic mirror target before you share it\. For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
 **To share a traffic mirror target**
 
@@ -32,7 +34,7 @@ You must create a traffic mirror target before you share it\. For more informati
 
 1. Choose **Create resource share**\.
 
-## Accepting a Resource Share<a name="tm-share-accept"></a>
+## Accepting a resource share<a name="tm-share-accept"></a>
 
  If you are in different AWS Organizations from the share owner, you must accept the resource share before you can access the shared resources\.
 
@@ -48,7 +50,7 @@ You must create a traffic mirror target before you share it\. For more informati
 
 1. To view the shared traffic mirror target, open the **Traffic Mirror Targets** page in the Amazon VPC console\.
 
-## Deleting a Resource Share<a name="tm-delete-share"></a>
+## Deleting a resource share<a name="tm-delete-share"></a>
 
 You can delete a resource share at any time\. When you delete a resource share, all principals that are associated with the resource share lose access to the shared resources\. Deleting a resource share does not delete the shared resources\. 
 

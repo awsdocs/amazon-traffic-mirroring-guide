@@ -1,4 +1,4 @@
-# Traffic Mirror Sessions<a name="traffic-mirroring-sessions"></a>
+# Traffic mirror sessions<a name="traffic-mirroring-sessions"></a>
 
 A *traffic mirror* session establishes a relationship between a traffic mirror source and a traffic mirror target\.
 

@@ -1,4 +1,4 @@
-# Traffic Mirror Sessions<a name="traffic-mirroring-session"></a>
+# Traffic mirror sessions<a name="traffic-mirroring-session"></a>
 
 A traffic mirror session establishes a relationship between a traffic mirror source and a traffic mirror target\.
 
@@ -11,16 +11,16 @@ A given packet is only mirrored one time\. However, you can use multiple traffic
 
 Traffic mirror sessions are evaluated based on the ascending priority that you define when you create the session\. 
 
-## Create a Traffic Mirror Session<a name="create-traffic-mirroring-session"></a>
+## Create a traffic mirror session<a name="create-traffic-mirroring-session"></a>
 
 Create a traffic mirror session\.
 
 Before you create a traffic mirror session, make sure that you have the following information:
 + The source
 + The traffic mirror target
-  + To use a target in your account, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
-  + To use a target that is owned by another account and shared with you, accept the shared resource before you create the traffic mirror session\. For more information, see [Accepting a Resource Share](cross-account-traffic-mirroring-targets.md#tm-share-accept)\.
-+ The traffic mirror filter \(for more information, see [Create a Traffic Mirror Filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\)
+  + To use a target in your account, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+  + To use a target that is owned by another account and shared with you, accept the shared resource before you create the traffic mirror session\. For more information, see [Accepting a resource share](cross-account-traffic-mirroring-targets.md#tm-share-accept)\.
++ The traffic mirror filter \(for more information, see [Create a traffic mirror filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\)
 
 **To create a traffic mirror session using the console**
 
@@ -40,7 +40,7 @@ Before you create a traffic mirror session, make sure that you have the followin
 
 1. For **Mirror target**, choose the traffic mirror target\.
 
-   To create a target, choose **Create target**\. For more information, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+   To create a target, choose **Create target**\. For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
 1. Under **Additional settings**, do the following:
 
@@ -64,7 +64,7 @@ Before you create a traffic mirror session, make sure that you have the followin
 
    1. For **Filter**, choose the traffic mirror filter that determines what traffic gets mirrored\.
 
-      To create a filter, choose **Create filter**\. For more information, see [Step 2: Create the Traffic Mirror Filter](traffic-mirroring-getting-started.md#step-create-traffic-mirroing-filters)\.
+      To create a filter, choose **Create filter**\. For more information, see [Step 2: Create the traffic mirror filter](traffic-mirroring-getting-started.md#step-create-traffic-mirroring-filters)\.
 
 1. \(Optional\) Add or remove a tag\.
 
@@ -79,7 +79,7 @@ Before you create a traffic mirror session, make sure that you have the followin
 **To create a traffic mirror session using the AWS CLI**  
 Use the [create\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-traffic-mirror-session.html) command\.
 
-## Modify Your Traffic Mirror Session<a name="modify-traffic-mirroring-session"></a>
+## Modify your traffic mirror session<a name="modify-traffic-mirroring-session"></a>
 
 **To modify your traffic mirror session using the console**
 
@@ -97,7 +97,7 @@ Use the [create\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/lates
 
 1. For **Mirror target**, choose the traffic mirror target\.
 
-   To create a target, choose **Create target**\. For more information, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+   To create a target, choose **Create target**\. For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
 1. Under **Additional settings**, do the following:
 
@@ -126,7 +126,7 @@ Use the [create\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/lates
 **To modify your traffic mirror session using the AWS CLI**  
 Use the [modify\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-traffic-mirror-session.html) command\.
 
-## Modify Traffic Mirror Session Tags<a name="tag-traffic-mirroring-session"></a>
+## Modify traffic mirror session tags<a name="tag-traffic-mirroring-session"></a>
 
 **To modify your traffic mirror session tags using the console**
 
@@ -151,9 +151,9 @@ Use the [modify\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/lates
 1. Choose **Modify**\.
 
 **To modify your traffic mirror session using the AWS CLI**  
-Use the [modify\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-traffic-mirror-session.html) command\.
+Use the [create\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-tags.html) command to add a tag\. Use the [delete\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-tags.html) command to remove a tag\.
 
-## View Your Traffic Mirror Sessions<a name="view-traffic-mirroring-session"></a>
+## View your traffic mirror sessions<a name="view-traffic-mirroring-session"></a>
 
 **To view your traffic mirror sessions using the console**
 
@@ -168,7 +168,7 @@ Use the [modify\-traffic\-mirror\-session](https://docs.aws.amazon.com/cli/lates
 **To view your traffic mirror session using the AWS CLI**  
 Use the [describe\-traffic\-mirror\-sessions](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-traffic-mirror-sessions.html) command\.
 
-## Delete a Traffic Mirror Session<a name="delete-traffic-mirroring-session"></a>
+## Delete a traffic mirror session<a name="delete-traffic-mirroring-session"></a>
 
 **To delete your traffic mirror session using the console**
 

@@ -1,7 +1,7 @@
-# Amazon Virtual Private Cloud Traffic Mirroring
+# Amazon Virtual Private Cloud Traffic mirroring
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -14,26 +14,26 @@ Amazon's trademarks and trade dress may not be used in
 
 -----
 ## Contents
-+ [What Is Traffic Mirroring?](what-is-traffic-mirroring.md)
-+ [How Traffic Mirroring Works](traffic-mirroring-how-it-works.md)
-   + [Traffic Mirror Targets](traffic-mirroring-targets.md)
-   + [Traffic Mirror Filters and Filter Rules](traffic-mirroring-filters.md)
-   + [Traffic Mirror Sessions](traffic-mirroring-sessions.md)
++ [What is Traffic Mirroring?](what-is-traffic-mirroring.md)
++ [How Traffic Mirroring works](traffic-mirroring-how-it-works.md)
+   + [Traffic mirror targets](traffic-mirroring-targets.md)
+   + [Traffic mirror filters and filter rules](traffic-mirroring-filters.md)
+   + [Traffic mirror sessions](traffic-mirroring-sessions.md)
    + [Traffic Mirroring and VPC Flow Logs](flow-log.md)
-   + [Traffic Mirror Source and Target Connectivity Options](traffic-mirroring-connection.md)
-   + [Traffic Mirroring Packet Format](traffic-mirroring-packet-formats.md)
-   + [Traffic Mirroring Authentication and Access Control](traffic-mirroring-security.md)
-+ [Getting Started with Traffic Mirroring](traffic-mirroring-getting-started.md)
-+ [Traffic Mirroring Examples](Traffic_Mirroring_Scenarios.md)
-   + [Example: Mirror Inbound TCP Traffic to a Single Monitoring Appliance](tm-example-inbound-tcp.md)
-   + [Example: Mirror Inbound TCP and UDP Traffic to Two Different Appliances](tm-example-inbound-tcp-udp.md)
-   + [Example: Mirror Non-Local VPC Traffic](tm-example-non-vpc.md)
-+ [Working with Open-Source Tools for Traffic Mirroring](tm-example-open-source.md)
+   + [Traffic mirror source and target connectivity options](traffic-mirroring-connection.md)
+   + [Traffic Mirroring packet format](traffic-mirroring-packet-formats.md)
+   + [Identity and access management for Traffic Mirroring](traffic-mirroring-security.md)
++ [Getting started with Traffic Mirroring](traffic-mirroring-getting-started.md)
++ [Traffic Mirroring examples](Traffic_Mirroring_Scenarios.md)
+   + [Example: Mirror inbound TCP traffic to a single monitoring appliance](tm-example-inbound-tcp.md)
+   + [Example: Mirror inbound TCP and UDP traffic to two different appliances](tm-example-inbound-tcp-udp.md)
+   + [Example: Mirror non-local VPC traffic](tm-example-non-vpc.md)
++ [Working with open-source tools for Traffic Mirroring](tm-example-open-source.md)
 + [Working with Traffic Mirroring](working-with-traffic-mirroring.md)
-   + [Traffic Mirror Targets](traffic-mirroring-target.md)
-   + [Cross-Account Traffic Mirror Targets](cross-account-traffic-mirroring-targets.md)
-   + [Traffic Mirror Filters](traffic-mirroring-filter.md)
-   + [Traffic Mirror Sessions](traffic-mirroring-session.md)
-+ [Monitoring Mirrored Traffic Using Amazon CloudWatch](traffic-mirror-cloudwatch.md)
-+ [Traffic Mirroring Service Quotas and Considerations](traffic-mirroring-considerations.md)
-+ [Document History for Traffic Mirroring](doc-history.md)
+   + [Traffic mirror targets](traffic-mirroring-target.md)
+   + [Cross-account traffic mirror targets](cross-account-traffic-mirroring-targets.md)
+   + [Traffic mirror filters](traffic-mirroring-filter.md)
+   + [Traffic mirror sessions](traffic-mirroring-session.md)
++ [Monitoring mirrored traffic using Amazon CloudWatch](traffic-mirror-cloudwatch.md)
++ [Traffic Mirroring quotas and considerations](traffic-mirroring-considerations.md)
++ [Document history for Traffic Mirroring](doc-history.md)

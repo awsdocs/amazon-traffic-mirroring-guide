@@ -3,7 +3,7 @@
 You can work with traffic mirror targets, sessions, and filters by using the Amazon VPC console or the AWS CLI\.
 
 **Topics**
-+ [Traffic Mirror Targets](traffic-mirroring-target.md)
-+ [Cross\-Account Traffic Mirror Targets](cross-account-traffic-mirroring-targets.md)
-+ [Traffic Mirror Filters](traffic-mirroring-filter.md)
-+ [Traffic Mirror Sessions](traffic-mirroring-session.md)
++ [Traffic mirror targets](traffic-mirroring-target.md)
++ [Cross\-account traffic mirror targets](cross-account-traffic-mirroring-targets.md)
++ [Traffic mirror filters](traffic-mirroring-filter.md)
++ [Traffic mirror sessions](traffic-mirroring-session.md)

@@ -1,4 +1,4 @@
-# Example: Mirror Non\-Local VPC Traffic<a name="tm-example-non-vpc"></a>
+# Example: Mirror non\-local VPC traffic<a name="tm-example-non-vpc"></a>
 
 Consider the scenario where you want to monitor traffic leaving your VPC or traffic whose source is outside your VPC\. In this case, you will mirror all traffic except traffic passing within your VPC and send it to a single monitoring appliance\. You need the following traffic mirror resources: 
 + A traffic mirror target for the appliance \(Target A\)
@@ -10,19 +10,19 @@ Consider the scenario where you want to monitor traffic leaving your VPC or traf
 
 In this example, the VPC CIDR block is 10\.0\.0\.0/16\.
 
-## Step 1: Create a Traffic Mirror Target<a name="step-create-target-non-vpc"></a>
+## Step 1: Create a traffic mirror target<a name="step-create-target-non-vpc"></a>
 
 Create a traffic mirror target \(Target A\) for the monitoring appliance\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one
 
-For more information, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
-## Step 2: Create a Traffic Mirror Filter<a name="step-create-filter-non-vpc"></a>
+## Step 2: Create a traffic mirror filter<a name="step-create-filter-non-vpc"></a>
 
-Create a traffic mirror filter \(Filter F\) that has the following rules\. For more information, see [Create a Traffic Mirror Filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\.
+Create a traffic mirror filter \(Filter F\) that has the following rules\. For more information, see [Create a traffic mirror filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\.
 
-### Outbound Traffic Mirror Filter Rules<a name="outbound-rules"></a>
+### Outbound traffic mirror filter rules<a name="outbound-rules"></a>
 
 Create the following outbound rules:
 + Reject all outbound packets which have a destination IP in the VPC CIDR block
@@ -52,7 +52,7 @@ Create the following outbound rules:
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | Accept all outbound traffic | 
 
-### Inbound Traffic Mirror Filter Rules<a name="inbound-rules"></a>
+### Inbound traffic mirror filter rules<a name="inbound-rules"></a>
 
 Create the following inbound rules:
 + Reject all inbound packets which have a source IP in the VPC CIDR block
@@ -82,12 +82,12 @@ Create the following inbound rules:
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | Accept all inbound traffic | 
 
-## Step 3: Create a Traffic Mirror Session<a name="step-create-session-non-vpc"></a>
+## Step 3: Create a traffic mirror session<a name="step-create-session-non-vpc"></a>
 
-Create and configure a traffic mirror session with the following options\. For more information, see [Create a Traffic Mirror Session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
+Create and configure a traffic mirror session with the following options\. For more information, see [Create a traffic mirror session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
 
 
-**Traffic Mirror Session to Monitor Inbound TCP Traffic**  
+**Traffic mirror session to monitor inbound TCP traffic**  
 
 | Option | Value | 
 | --- | --- | 

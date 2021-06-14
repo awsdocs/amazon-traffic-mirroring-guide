@@ -1,4 +1,4 @@
-# Example: Mirror Inbound TCP and UDP Traffic to Two Different Appliances<a name="tm-example-inbound-tcp-udp"></a>
+# Example: Mirror inbound TCP and UDP traffic to two different appliances<a name="tm-example-inbound-tcp-udp"></a>
 
 Consider the scenario where you want to mirror inbound TCP and UDP traffic on an instance\. But you want to send the TCP traffic to one appliance \(Appliance A\), and the UDP traffic to a second appliance \(Appliance B\)\. You need the following traffic mirror entities for this example:
 + A traffic mirror target for Appliance A \(Target A\)
@@ -14,28 +14,28 @@ Consider the scenario where you want to mirror inbound TCP and UDP traffic on an
   + A traffic mirror target \(Target B\) for Appliance B
   + A traffic mirror filter \(Filter 2\) with a traffic mirror rule for the UDP inbound traffic
 
-## Step 1: Create a Traffic Mirror Target for Appliance A<a name="step-create-targetA"></a>
+## Step 1: Create a traffic mirror target for appliance a<a name="step-create-targetA"></a>
 
 Create a traffic mirror target for Appliance A \(Target A\)\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one
 
-For more information, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
-## Step 2: Create a Traffic Mirror Target for Appliance B<a name="step-create-targetB"></a>
+## Step 2: Create a traffic mirror target for appliance b<a name="step-create-targetB"></a>
 
 Create a traffic mirror target \(Target B\) for Appliance B\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one
 
-For more information, see [Create a Traffic Mirror Target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
+For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
-## Step 3: Create a Traffic Mirror Filter with a Rule for TCP Traffic<a name="step-create-filter-tcp"></a>
+## Step 3: Create a traffic mirror filter with a rule for TCP traffic<a name="step-create-filter-tcp"></a>
 
-Create a traffic mirror filter \(Filter 1\) with the following inbound rule for TCP traffic\. For more information, see [Create a Traffic Mirror Filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)
+Create a traffic mirror filter \(Filter 1\) with the following inbound rule for TCP traffic\. For more information, see [Create a traffic mirror filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)
 
 
-**Traffic Mirror Filter Rule for Inbound TCP Traffic**  
+**Traffic mirror filter rule for inbound TCP traffic**  
 
 | Option | Value | 
 | --- | --- | 
@@ -47,12 +47,12 @@ Create a traffic mirror filter \(Filter 1\) with the following inbound rule for 
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | TCP Rule | 
 
-## Step 4: Create a Traffic Mirror Filter with a Rule for UDP Traffic<a name="step-create-filter-tcp"></a>
+## Step 4: Create a traffic mirror filter with a rule for UDP traffic<a name="step-create-filter-tcp"></a>
 
-Create a traffic mirror filter \(Filter 2\) with the following inbound rule for UDP traffic\. For more information, see [Create a Traffic Mirror Filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)
+Create a traffic mirror filter \(Filter 2\) with the following inbound rule for UDP traffic\. For more information, see [Create a traffic mirror filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)
 
 
-**Traffic Mirror Filter Rule for Inbound UDP Traffic**  
+**Traffic mirror filter rule for inbound UDP traffic**  
 
 | Option | Value | 
 | --- | --- | 
@@ -64,12 +64,12 @@ Create a traffic mirror filter \(Filter 2\) with the following inbound rule for 
 | Destination CIDR block | 0\.0\.0\.0/0 | 
 | Description | UDP Rule | 
 
-## Step 5: Create a Traffic Mirror Session for the TCP Traffic<a name="step-create-session-tcp"></a>
+## Step 5: Create a traffic mirror session for the TCP traffic<a name="step-create-session-tcp"></a>
 
-Create and configure a traffic mirror session with the following options\. For more information, see [Create a Traffic Mirror Session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
+Create and configure a traffic mirror session with the following options\. For more information, see [Create a traffic mirror session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
 
 
-**Traffic Mirror Session to Monitor Inbound TCP Traffic**  
+**Traffic mirror session to monitor inbound TCP traffic**  
 
 | Option | Value | 
 | --- | --- | 
@@ -78,12 +78,12 @@ Create and configure a traffic mirror session with the following options\. For m
 | Filter | Filter 1 | 
 | Session number | 1 | 
 
-## Step 6: Create a Traffic Mirror Session for the UDP Traffic<a name="step-create-session-udp"></a>
+## Step 6: Create a traffic mirror session for the UDP traffic<a name="step-create-session-udp"></a>
 
-Create and configure a traffic mirror session with the following options\. For more information, see [Create a Traffic Mirror Session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
+Create and configure a traffic mirror session with the following options\. For more information, see [Create a traffic mirror session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
 
 
-**Traffic Mirror Session to Monitor Inbound UDP Traffic**  
+**Traffic mirror session to monitor inbound UDP traffic**  
 
 | Option | Value | 
 | --- | --- | 
