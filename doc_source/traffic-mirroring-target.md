@@ -1,14 +1,14 @@
-# Traffic Mirror Targets<a name="traffic-mirroring-target"></a>
+# Traffic mirror targets<a name="traffic-mirroring-target"></a>
 
 A target is the destination for a traffic mirror session\.
 
-The traffic mirror target can be an elastic network interface, or a Network Load Balancer\. After you create a target, assign it to a traffic mirror session\. For more information, see [Create a Traffic Mirror Session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
+The traffic mirror target can be an elastic network interface, or a Network Load Balancer\. After you create a target, assign it to a traffic mirror session\. For more information, see [Create a traffic mirror session](traffic-mirroring-session.md#create-traffic-mirroring-session)\.
 
 You must configure a security group for the traffic mirror target that allows VXLAN traffic from the source to the target\.
 
-You can share a traffic mirror target across accounts\. To share a traffic mirror target, create the target, and then share the target\. For more information, see [Sharing a Traffic Mirror Target](cross-account-traffic-mirroring-targets.md#tm-sharing)\.
+You can share a traffic mirror target across accounts\. To share a traffic mirror target, create the target, and then share the target\. For more information, see [Sharing a traffic mirror target](cross-account-traffic-mirroring-targets.md#tm-sharing)\.
 
-## Create a Traffic Mirror Target<a name="create-traffic-mirroring-target"></a>
+## Create a traffic mirror target<a name="create-traffic-mirroring-target"></a>
 
 Create a traffic mirror target\.
 
@@ -43,11 +43,11 @@ Create a traffic mirror target\.
 **To create a traffic mirror target using the AWS CLI**  
 Use the [create\-traffic\-mirror\-target](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-traffic-mirror-target.html) command\.
 
-## Modify Traffic Mirror Target Tags<a name="modify-traffic-mirroring-targets"></a>
+## Modify traffic mirror target tags<a name="modify-traffic-mirroring-targets"></a>
 
 Add a tag to the traffic mirror target, or remove a tag from the traffic mirror target\.
 
-**To modify your traffic mirror targets using the console**
+**To modify your traffic mirror target tags using the console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
@@ -69,7 +69,10 @@ Add a tag to the traffic mirror target, or remove a tag from the traffic mirror 
 
 1. Choose **Save changes**\.
 
-## View Traffic Mirror Target Details<a name="view-traffic-mirroring-targets"></a>
+**To modify your traffic mirror target tags using the AWS CLI**  
+Use the [create\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-tags.html) command to add a tag\. Use the [delete\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-tags.html) command to remove a tag\.
+
+## View traffic mirror target details<a name="view-traffic-mirroring-targets"></a>
 
 View the traffic mirror target details\.
 
@@ -86,7 +89,7 @@ View the traffic mirror target details\.
 **To view your traffic mirror targets using the AWS CLI**  
 Use the [describe\-traffic\-mirror\-targets](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-traffic-mirror-targets.html) command\.
 
-## Delete a Traffic Mirror Target<a name="delete-traffic-mirroring-target"></a>
+## Delete a traffic mirror target<a name="delete-traffic-mirroring-target"></a>
 
 Before you delete a traffic mirror target, pause all traffic mirror sessions that use the traffic mirror target\.
 

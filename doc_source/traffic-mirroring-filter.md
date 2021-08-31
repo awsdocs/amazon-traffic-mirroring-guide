@@ -1,4 +1,4 @@
-# Traffic Mirror Filters<a name="traffic-mirroring-filter"></a>
+# Traffic mirror filters<a name="traffic-mirroring-filter"></a>
 
 Use a traffic mirror filter and its rules to define the traffic that is mirrored\. A traffic mirror filter contains one or more traffic mirror rules, and a set of network services\. 
 
@@ -11,7 +11,7 @@ You can define a set of parameters to apply to the traffic mirror source traffic
 + Source CIDR block
 + Destination CIDR block
 
-## Create a Traffic Mirror Filter<a name="create-traffic-mirroring-filter"></a>
+## Create a traffic mirror filter<a name="create-traffic-mirroring-filter"></a>
 
 Create a traffic mirror filter\.
 
@@ -74,7 +74,7 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
 **To create a traffic mirror filter using the AWS CLI**  
 Use the [create\-traffic\-mirror\-filter](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-traffic-mirror-filter.html) command\.
 
-## Modify Your Traffic Mirror Filter Rules<a name="modify-traffic-mirroring-filter-rules"></a>
+## Modify your traffic mirror filter rules<a name="modify-traffic-mirroring-filter-rules"></a>
 
 Add or remove inbound and outbound traffic mirror filter rules\.
 
@@ -128,7 +128,7 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
    + Select the rule, and choose **Modify inbound rule** or **Modify outbound rule**\.
    + Make the required changes, and then choose **Modify rule**\. 
 
-## Modify Traffic Mirror Filter Tags<a name="modify-traffic-mirroring-filter-tags"></a>
+## Modify traffic mirror filter tags<a name="modify-traffic-mirroring-filter-tags"></a>
 
 **To modify your traffic mirror filters using the console**
 
@@ -151,9 +151,9 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
 1. Choose **Save changes**\.
 
 **To modify the traffic mirror filter tags using the AWS CLI**  
-Use the [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/directconnect/tag-resource.html) command to add a tag\. Use the [untag\-resource](https://docs.aws.amazon.com/cli/latest/reference/directconnect/untag-resource.html) command to remove a tag\.
+Use the [create\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-tags.html) command to add a tag\. Use the [delete\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-tags.html) command to remove a tag\.
 
-## Modify Traffic Mirror Filter Network Services<a name="modify-traffic-mirroring-filter-network-services"></a>
+## Modify traffic mirror filter network services<a name="modify-traffic-mirroring-filter-network-services"></a>
 
 **To modify your traffic mirror filter network services using the console**
 
@@ -174,7 +174,7 @@ Use the [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/directc
 **To modify the network services traffic mirror filters using the AWS CLI**  
 Use the [modify\-traffic\-mirror\-filter\-network\-services](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-traffic-mirror-filter-network-services.html) command\.
 
-## View Your Traffic Mirror Filters<a name="view-traffic-mirroring-filter"></a>
+## View your traffic mirror filters<a name="view-traffic-mirroring-filter"></a>
 
 **To view your traffic mirror filters using the console**
 
@@ -189,7 +189,7 @@ Use the [modify\-traffic\-mirror\-filter\-network\-services](https://docs.aws.am
 **To view your traffic mirror filters using the AWS CLI**  
 Use the [describe\-traffic\-mirror\-filters](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-traffic-mirror-filters.html) command\.
 
-## Delete a Traffic Mirror Filter<a name="delete-traffic-mirroring-filter"></a>
+## Delete a traffic mirror filter<a name="delete-traffic-mirroring-filter"></a>
 
 **To delete a traffic mirror filter using the console**
 

@@ -1,12 +1,13 @@
-# Getting Started with Traffic Mirroring<a name="traffic-mirroring-getting-started"></a>
+# Getting started with Traffic Mirroring<a name="traffic-mirroring-getting-started"></a>
 
 The following tasks help you to become familiar with traffic mirror targets, filters, and sessions\. Follow the instructions to create a traffic mirror target and filter, and then use those resources to create a session\.
 
 **Topics**
 + [Prerequisites](#traffic-mirroring-prerequisites)
-+ [Step 1: Create the Traffic Mirror Target](#step-create-traffic-mirroring-target)
-+ [Step 2: Create the Traffic Mirror Filter](#step-create-traffic-mirroing-filters)
-+ [Step 3: Create the Traffic Mirror Session](#step-create-traffic-mirroing-sessions)
++ [Step 1: Create the traffic mirror target](#step-create-traffic-mirroring-target)
++ [Step 2: Create the traffic mirror filter](#step-create-traffic-mirroring-filters)
++ [Step 3: Create the traffic mirror session](#step-create-traffic-mirroring-sessions)
++ [Step 4: Analyze the data](#analyze-data)
 
 ## Prerequisites<a name="traffic-mirroring-prerequisites"></a>
 + Make sure that the traffic mirror source and traffic mirror target are either: 
@@ -15,9 +16,9 @@ The following tasks help you to become familiar with traffic mirror targets, fil
 + Make sure that the traffic mirror target instance allows traffic to UDP port 4789\.
 + Make sure that the traffic mirror source has a route table entry for the traffic mirror target\.
 + Make sure that there are no security group rules or network ACL rules on the traffic mirror target that drop the mirrored traffic from the traffic mirror source\.
-+ Review the Traffic Mirroring considerations\. For more information, see [Traffic Mirroring Service Quotas and Considerations](traffic-mirroring-considerations.md)\.
++ Review the Traffic Mirroring considerations\. For more information, see [Traffic Mirroring quotas and considerations](traffic-mirroring-considerations.md)\.
 
-## Step 1: Create the Traffic Mirror Target<a name="step-create-traffic-mirroring-target"></a>
+## Step 1: Create the traffic mirror target<a name="step-create-traffic-mirroring-target"></a>
 
 Create a destination for mirrored traffic\.
 
@@ -49,7 +50,7 @@ Create a destination for mirrored traffic\.
 
 1. Choose **Create**\.
 
-## Step 2: Create the Traffic Mirror Filter<a name="step-create-traffic-mirroing-filters"></a>
+## Step 2: Create the traffic mirror filter<a name="step-create-traffic-mirroring-filters"></a>
 
 A traffic mirror filter contains one or more traffic mirror rules, and a set of network services\. The filters and rules that you add define the traffic that is mirrored\. 
 
@@ -105,7 +106,7 @@ A traffic mirror filter contains one or more traffic mirror rules, and a set of 
 
 1. Choose **Create**\.
 
-## Step 3: Create the Traffic Mirror Session<a name="step-create-traffic-mirroing-sessions"></a>
+## Step 3: Create the traffic mirror session<a name="step-create-traffic-mirroring-sessions"></a>
 
 Create a traffic mirror session that sends mirrored packets from the source to a target so that you can monitor and analyze traffic\.
 
@@ -162,3 +163,7 @@ Create a traffic mirror session that sends mirrored packets from the source to a
    \[Remove a tag\] Next to the tag, choose **Remove tag**\.
 
 1. Choose **Create**\.
+
+## Step 4: Analyze the data<a name="analyze-data"></a>
+
+After the mirrored traffic is on the traffic mirror target, you can use a tool from the [AWS Partner Network](https://partners.amazonaws.com/search/partners/?keyword=traffic%20mirroring) to analyze the data\.
