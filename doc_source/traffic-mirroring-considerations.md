@@ -11,7 +11,7 @@ For example, if an 8996 byte packet is mirrored, and the traffic mirror target M
 + We recommend using a Network Load Balancer as a target for high availability\. 
 + Mirrored traffic counts toward instance bandwidth\. The impact depends on the amount of traffic and the traffic type\. Consider a scenario where you mirror a network interface that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic\. In this case, the instance needs to handle 1 Gbps of inbound traffic and 3 Gbps of outbound traffic \(1 Gbps for the outbound traffic, 1 Gbps for the mirrored inbound traffic and 1 Gbps for the mirrored outbound traffic\)\.
 + Production traffic has a higher priority than mirrored traffic when there is traffic congestion\. As a result, mirrored traffic is dropped when there is congestion\.
-+ Mirrored traffic on an instance is not subject to outgoing security group evaluation\.
++ Mirrored outbound traffic from a source instance is not subject to security group evaluation\.
 + Flow logs do not capture mirrored traffic\.
 + If you do not have UDP listeners on the Network Load Balancer, you can still use the Network Load Balancer as a target\. However, Traffic Mirroring cannot occur because there are no UDP listeners\.
 + When you delete a network interface that is a traffic mirror source, the traffic mirror sessions that are associated with the source are automatically deleted\.
