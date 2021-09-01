@@ -1,4 +1,4 @@
-# Example: Mirror inbound TCP and UDP traffic to two different appliances<a name="tm-example-inbound-tcp-udp"></a>
+# Example: Mirror inbound TCP and UDP traffic to multiple appliances<a name="tm-example-inbound-tcp-udp"></a>
 
 Consider the scenario where you want to mirror inbound TCP and UDP traffic on an instance\. But you want to send the TCP traffic to one appliance \(Appliance A\), and the UDP traffic to a second appliance \(Appliance B\)\. You need the following traffic mirror entities for this example:
 + A traffic mirror target for Appliance A \(Target A\)

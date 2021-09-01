@@ -1,8 +1,6 @@
 # Traffic Mirroring and VPC Flow Logs<a name="flow-log"></a>
 
-You can use Traffic Mirroring and VPC Flow Logs to monitor your VPC traffic\. 
-
-VPC Flow Logs allow customers to collect, store, and analyze network flow logs\. The Flow Logs capture information about the following:
+You can use Traffic Mirroring and VPC Flow Logs to monitor your VPC traffic\. You can collect, store, and analyze network flow logs\. The Flow Logs capture information about the following:
 + Allowed and denied traffic
 + Source and destination IP addresses
 + Ports

@@ -1,12 +1,12 @@
 # Traffic mirror targets<a name="traffic-mirroring-targets"></a>
 
-A *traffic mirror target* is the destination for mirrored traffic\. The traffic mirror target can be owned by an AWS account that is different from the traffic mirror source\.
+A *traffic mirror target* is the destination for mirrored traffic\. A traffic mirror target can be owned by an AWS account that is different from the traffic mirror source\.
 
 Use any of the following resources for a traffic mirror target:
-+ A network interface
-+ A Network Load Balancer
++ Network interfaces
++ Network Load Balancers
 
-A traffic mirror target can be used in more than one traffic mirror session\. Make sure to allow VXLAN traffic \(UDP port 4789\) from the traffic mirror source in the security groups that are associated with the traffic mirror target\.
+You can use a traffic mirror target in more than one traffic mirror session\. Make sure to allow VXLAN traffic \(UDP port 4789\) from the traffic mirror source in the security groups that are associated with the traffic mirror target\.
 
 ## Traffic mirror target options<a name="traffic-mirroring-targets-options"></a>
 

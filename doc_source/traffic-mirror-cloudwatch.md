@@ -1,8 +1,8 @@
-# Monitoring mirrored traffic using Amazon CloudWatch<a name="traffic-mirror-cloudwatch"></a>
+# Monitor mirrored traffic using Amazon CloudWatch<a name="traffic-mirror-cloudwatch"></a>
 
 You can monitor your mirrored traffic using Amazon CloudWatch, which collects information from your network interface that is part of a traffic mirror session, and creates readable, near real\-time metrics\. You can use this information to monitor and troubleshoot Traffic Mirroring\. 
 
-For more information about Amazon CloudWatch, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\. For more information about EC2 instance metrics, see [List the Available CloudWatch Metrics for Your Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) in *Amazon EC2 User Guide for Linux Instances*\. For more information about pricing, see [Amazon CloudWatch Pricing](http://aws.amazon.com/cloudwatch/pricing)\.
+For more information about Amazon CloudWatch, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\. For more information, see [List the available CloudWatch metrics for your instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) in *Amazon EC2 User Guide for Linux Instances*\. For more information, see [Amazon CloudWatch Pricing](http://aws.amazon.com/cloudwatch/pricing)\.
 
 ## Traffic Mirroring metrics and dimensions<a name="metrics-dimensions-traffic-mirror"></a>
 
@@ -30,7 +30,7 @@ To filter the metric data, use the following dimensions\.
 | InstanceId | This dimension filters the data you request for the identified instance only\. This helps you pinpoint an exact instance from which to monitor data\. Available for instances with Detailed or Basic Monitoring enabled\.  | 
 | InstanceType | This dimension filters the data you request for all instances running with this specified instance type\. This helps you categorize your data by the type of instance running\. For example, you might compare data from an m1\.small instance and an m1\.large instance to determine which has the better business value for your application\. Available for instances with Detailed Monitoring enabled\.  | 
 
-## Viewing Traffic Mirroring CloudWatch metrics<a name="viewing-traffic-mirror-metrics"></a>
+## View Traffic Mirroring CloudWatch metrics<a name="viewing-traffic-mirror-metrics"></a>
 
 You can view the metrics for Traffic Mirroring as follows\.
 
@@ -53,4 +53,4 @@ At a command prompt, use the following command to list the metrics that are avai
 aws cloudwatch list-metrics --namespace "AWS/EC2"
 ```
 
-The Traffic Mirroring metrics are included with the EC2 metrics\.
+The Traffic Mirroring metrics are included with the metrics for Amazon EC2\.

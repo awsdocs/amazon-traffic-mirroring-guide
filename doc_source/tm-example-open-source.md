@@ -1,4 +1,4 @@
-# Working with open\-source tools for Traffic Mirroring<a name="tm-example-open-source"></a>
+# Work with open\-source tools for Traffic Mirroring<a name="tm-example-open-source"></a>
 
 You can use open\-source tools to monitor network traffic from Amazon EC2 instances\. The following tools work with Traffic Mirroring:
 + **Zeek** — For more information, see the [Zeek Network Monitor Security website](https://www.zeek.org/)\.

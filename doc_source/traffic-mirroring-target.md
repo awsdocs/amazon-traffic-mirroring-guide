@@ -6,7 +6,7 @@ The traffic mirror target can be an elastic network interface, or a Network Load
 
 You must configure a security group for the traffic mirror target that allows VXLAN traffic from the source to the target\.
 
-You can share a traffic mirror target across accounts\. To share a traffic mirror target, create the target, and then share the target\. For more information, see [Sharing a traffic mirror target](cross-account-traffic-mirroring-targets.md#tm-sharing)\.
+You can share a traffic mirror target across accounts\. To share a traffic mirror target, create the target, and then share the target\. For more information, see [Share a traffic mirror target](cross-account-traffic-mirroring-targets.md#tm-sharing)\.
 
 ## Create a traffic mirror target<a name="create-traffic-mirroring-target"></a>
 

@@ -19,7 +19,7 @@ Before you create a traffic mirror session, make sure that you have the followin
 + The source
 + The traffic mirror target
   + To use a target in your account, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
-  + To use a target that is owned by another account and shared with you, accept the shared resource before you create the traffic mirror session\. For more information, see [Accepting a resource share](cross-account-traffic-mirroring-targets.md#tm-share-accept)\.
+  + To use a target that is owned by another account and shared with you, accept the shared resource before you create the traffic mirror session\. For more information, see [Accept a resource share](cross-account-traffic-mirroring-targets.md#tm-share-accept)\.
 + The traffic mirror filter \(for more information, see [Create a traffic mirror filter](traffic-mirroring-filter.md#create-traffic-mirroring-filter)\)
 
 **To create a traffic mirror session using the console**

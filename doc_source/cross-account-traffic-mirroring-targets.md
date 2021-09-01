@@ -10,7 +10,7 @@ Traffic mirror sessions that are created in a different account than the traffic
 
 
 
-## Sharing a traffic mirror target<a name="tm-sharing"></a>
+## Share a traffic mirror target<a name="tm-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a traffic mirror target across accounts\. Use the following procedure to share a traffic mirror target that you own\.
 
@@ -34,7 +34,7 @@ You must create a traffic mirror target before you share it\. For more informati
 
 1. Choose **Create resource share**\.
 
-## Accepting a resource share<a name="tm-share-accept"></a>
+## Accept a resource share<a name="tm-share-accept"></a>
 
  If you are in different AWS Organizations from the share owner, you must accept the resource share before you can access the shared resources\.
 
@@ -50,7 +50,7 @@ You must create a traffic mirror target before you share it\. For more informati
 
 1. To view the shared traffic mirror target, open the **Traffic Mirror Targets** page in the Amazon VPC console\.
 
-## Deleting a resource share<a name="tm-delete-share"></a>
+## Delete a resource share<a name="tm-delete-share"></a>
 
 You can delete a resource share at any time\. When you delete a resource share, all principals that are associated with the resource share lose access to the shared resources\. Deleting a resource share does not delete the shared resources\. 
 

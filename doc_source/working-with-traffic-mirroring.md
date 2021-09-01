@@ -1,4 +1,4 @@
-# Working with Traffic Mirroring<a name="working-with-traffic-mirroring"></a>
+# Work with Traffic Mirroring<a name="working-with-traffic-mirroring"></a>
 
 You can work with traffic mirror targets, sessions, and filters by using the Amazon VPC console or the AWS CLI\.
 

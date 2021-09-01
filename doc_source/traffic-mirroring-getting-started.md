@@ -1,4 +1,4 @@
-# Getting started with Traffic Mirroring<a name="traffic-mirroring-getting-started"></a>
+# Get started with Traffic Mirroring<a name="traffic-mirroring-getting-started"></a>
 
 The following tasks help you to become familiar with traffic mirror targets, filters, and sessions\. Follow the instructions to create a traffic mirror target and filter, and then use those resources to create a session\.
 
