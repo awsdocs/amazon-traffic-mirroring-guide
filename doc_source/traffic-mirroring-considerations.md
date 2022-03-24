@@ -1,6 +1,6 @@
 # Traffic Mirroring quotas and considerations<a name="traffic-mirroring-considerations"></a>
 
-Take the following information into consideration when you use Traffic Mirroring:
+## Considerations<a name="traffic-mirroring-basics"></a>
 + Encapsulated mirror traffic is routed by using the VPC route table\. Make sure that your route table is configured to send the mirrored traffic to the correct traffic mirror target\. 
 + You can only create a traffic mirror session if you are the owner of the source network interface or its subnet\.
 + We truncate the packet to the MTU value when both of the following are true:
@@ -8,35 +8,35 @@ Take the following information into consideration when you use Traffic Mirroring
   + The mirrored traffic packet size is greater than the traffic mirror target MTU value\.
 
   For example, if an 8996 byte packet is mirrored, and the traffic mirror target MTU value is 9001 bytes, the mirror encapsulation results in the mirrored packet being greater than the MTU value\. In this case, the mirror packet is truncated\. To prevent mirror packets from being truncated, set the traffic mirror source interface MTU value to 54 bytes less than the traffic mirror target MTU value for IPv4 and 74 bytes less than the traffic mirror target MTU value when you use IPv6\. Therefore, the maximum MTU value supported by Traffic Mirroring with no packet truncation is 8947 bytes\. For more information about configuring the network MTU value, see[ Network Maximum Transmission Unit \(MTU\) for Your EC2 Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/network_mtu.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
-+ We recommend using a Network Load Balancer as a target for high availability\. 
 + Mirrored traffic counts toward instance bandwidth\. For example, if you mirror a network interface that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic, the instance must handle 4 Gbps of traffic \(1 Gbps inbound, 1 Gbps mirrored inbound, 1 Gbps outbound, and 1 Gbps mirrored outbound\)\.
 + Production traffic has a higher priority than mirrored traffic when there is traffic congestion\. As a result, mirrored traffic is dropped when there is congestion\.
 + Mirrored outbound traffic from a source instance is not subject to security group evaluation\.
 + Flow logs do not capture mirrored traffic\.
-+ If you do not have UDP listeners on the Network Load Balancer, you can still use the Network Load Balancer as a target\. However, Traffic Mirroring cannot occur because there are no UDP listeners\.
 + When you delete a network interface that is a traffic mirror source, the traffic mirror sessions that are associated with the source are automatically deleted\.
++ Packets that are dropped at the traffic mirror source by security group rules or by network ACL rules are not mirrored\.
++ An elastic network interface cannot be a traffic mirror target and a traffic mirror session source at the same time\.
++ We recommend using a Network Load Balancer as a target for high availability\.
++ If you do not have UDP listeners on the Network Load Balancer, you can still use the Network Load Balancer as a target\. However, Traffic Mirroring cannot occur because there are no UDP listeners\.
 + If you remove the UDP listeners from a Network Load Balancer that is a traffic mirror target, Traffic Mirroring fails without an error indication\.
 + When the Network Load Balancer removes the node in an Availability Zone from the DNS table, Traffic Mirroring continues to send the mirrored packets to that node\. 
 +  When you have an existing Network Load Balancer which is a traffic mirror target and you add additional subnets to it, there is no effect\. For example, mirrored traffic in the Availability Zone of the new subnet is not routed in the same Availability Zone unless you enable cross\-zone load balancing\.
-+ We recommend that you use cross\-zone load balancing to ensure that the packets continue to be mirrored when all targets in an Availability Zone are not healthy\.
-+ Packets that are dropped at the traffic mirror source by security group rules or by network ACL rules do not get mirrored\.
-+ An elastic network interface cannot be a traffic mirror target and a traffic mirror session source at the same time\.
-+ Traffic Mirroring is available on the following EC2 instance types: 
-  + [Virtualized Nitro\-based hypervisor EC2 instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances)
-  + The following current generation Xen\-based hypervisor EC2 instance types: C4, D2, G3, G3s, H1, I3, M4, P2, P3, R4, X1, and X1e
-+ Traffic Mirroring is not available on EC2 instances of type T2\.
-+ Traffic Mirroring is not available on any [previous generation EC2 instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes)\.
++ We recommend that you use cross\-zone load balancing with your Network Load Balancer to ensure that the packets continue to be mirrored when all targets in an Availability Zone are not healthy\.
 
-## Traffic types<a name="traffic-mirroring-network-services"></a>
+## Limitations<a name="traffic-mirroring-network-services"></a>
 
-Not all traffic can be mirrored\. The following traffic types cannot be mirrored:
+Traffic Mirroring is not available on the following EC2 instance types:
++ These current generation instances: C6gn, C6i, Im4gn, Is4gen, M6a, M6i, R6i, T2
++ Any bare metal instances
++ Any [previous generation instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes)
+
+The following traffic types cannot be mirrored:
 + ARP
 + DHCP
 + Instance metadata service
 + NTP
 + Windows activation
 
-## Traffic Mirroring quotas<a name="traffic-mirroring-limits"></a>
+## Quotas<a name="traffic-mirroring-limits"></a>
 
 The following are the quotas for Traffic Mirroring for your AWS account\.
 
@@ -53,10 +53,12 @@ The following are the quotas for Traffic Mirroring for your AWS account\.
 
 **Sources**
 + Maximum number of sources per Network Load Balancer: No limit
-+ Maximum number of sources per a Dedicated Instance type as target: 100
-+ Maximum number of sources per interface as a target attached to instances that are not Dedicated Instances: 10 †
++ Maximum number of sources per target \(smaller sizes\): 10 †
++ Maximum number of sources per target \(largest size\): 100 \*
 
 † This quota cannot be increased\.
+
+\* Applies only to the [largest instance size](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes) for an instance type\. For example, for M5 instances, the maximum is 100 for `m5.24xlarge` and 10 for all other M5 instance sizes\.
 
 ## Checksum offloading<a name="traffic-checksum-offloading"></a>
 

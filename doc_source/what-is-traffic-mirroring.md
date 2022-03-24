@@ -10,6 +10,7 @@ The security and monitoring appliances can be deployed as individual instances, 
 ## Traffic Mirroring concepts<a name="concepts"></a>
 
 The following are the key concepts for Traffic Mirroring:
++ **Source** — A network interface with the type `instance`\.
 + **Target** — The destination for mirrored traffic\.
 + **Filter** — A set of rules that defines the traffic that is copied in a traffic mirror session\.
 + **Session** — An entity that describes Traffic Mirroring from a source to a target using filters\.
@@ -19,7 +20,7 @@ The following are the key concepts for Traffic Mirroring:
 You can create, access, and manage your traffic mirror resources using any of the following:
 + **AWS Management Console**— Provides a web interface that you can use to access your traffic mirror resources\.
 + **AWS Command Line Interface \(AWS CLI\)** — Provides commands for a broad set of AWS services, including Amazon VPC\. The AWS CLI is supported on Windows, macOS, and Linux\. For more information, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\.
-+ **AWS SDKs** — Provide language\-specific APIs\. The AWSS SDKs take care of many of the connection details, such as calculating signatures, handling request retries, and handling errors\. For more information, see [AWS SDKs](https://aws.amazon.com/tools/#SDKs)\.
++ **AWS SDKs** — Provide language\-specific APIs\. The AWS SDKs take care of many of the connection details, such as calculating signatures, handling request retries, and handling errors\. For more information, see [AWS SDKs](https://aws.amazon.com/tools/#SDKs)\.
 + **Query API**— Provides low\-level API actions that you call using HTTPS requests\. Using the Query API is the most direct way to access Amazon VPC\. However, it requires that your application handle low\-level details such as generating the hash to sign the request and handling errors\. For more information, see the [Amazon EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/)\.
 
 ## Traffic Mirroring benefits<a name="traffic-mirroring-benefits"></a>

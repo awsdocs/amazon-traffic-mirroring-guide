@@ -16,7 +16,7 @@ Traffic mirror sessions are evaluated based on the ascending priority that you d
 Create a traffic mirror session\.
 
 Before you create a traffic mirror session, make sure that you have the following information:
-+ The source
++ The network interface for the source\. The network interface type must be `instance`\.
 + The traffic mirror target
   + To use a target in your account, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
   + To use a target that is owned by another account and shared with you, accept the shared resource before you create the traffic mirror session\. For more information, see [Accept a resource share](cross-account-traffic-mirroring-targets.md#tm-share-accept)\.
@@ -36,7 +36,7 @@ Before you create a traffic mirror session, make sure that you have the followin
 
 1. \(Optional\) For **Description**, enter a description for the traffic mirror session\.
 
-1. For **Mirror source**, choose the network interface of the instance that you want to monitor\. 
+1. For **Mirror source**, choose a network interface\. Only network interfaces with the type `instance` are supported and can be selected\.
 
 1. For **Mirror target**, choose the traffic mirror target\.
 

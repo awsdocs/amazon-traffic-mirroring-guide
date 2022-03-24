@@ -1,4 +1,4 @@
-# Amazon Virtual Private Cloud Traffic mirroring
+# Amazon Virtual Private Cloud Traffic Mirroring
 
 -----
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****

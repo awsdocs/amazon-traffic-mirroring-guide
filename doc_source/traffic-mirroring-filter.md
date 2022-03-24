@@ -1,6 +1,6 @@
 # Traffic mirror filters<a name="traffic-mirroring-filter"></a>
 
-Use a traffic mirror filter and its rules to define the traffic that is mirrored\. A traffic mirror filter contains one or more traffic mirror rules, and a set of network services\. 
+Use a traffic mirror filter and its rules to determine the traffic that is mirrored\. A traffic mirror filter contains one or more traffic mirror rules\. You can also mirror certaom network services\.
 
 You can define a set of parameters to apply to the traffic mirror source traffic to determine the traffic to mirror\. The following traffic mirror filter rule parameters are available:
 + Traffic direction: Inbound or outbound
@@ -10,6 +10,8 @@ You can define a set of parameters to apply to the traffic mirror source traffic
 + Destination port range
 + Source CIDR block
 + Destination CIDR block
+
+Rules are evaluated from the lowest value to the highest value\. The first rule that matches the traffic determines the action to take\.
 
 ## Create a traffic mirror filter<a name="create-traffic-mirroring-filter"></a>
 
