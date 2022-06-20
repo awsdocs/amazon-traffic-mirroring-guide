@@ -1,6 +1,6 @@
-## Amazon Traffic Mirroring Guide
+## Amazon VPC Traffic Mirroring Guide
 
-The open source version of the [PRODUCT NAME] docs. You can submit feedback & requests for changes by submitting issues in this repo or by making proposed changes & submitting a pull request.
+The open source version of the Traffic Mirroring docs. You can submit feedback & requests for changes by submitting issues in this repo or by making proposed changes & submitting a pull request.
 
 ## License Summary
 
