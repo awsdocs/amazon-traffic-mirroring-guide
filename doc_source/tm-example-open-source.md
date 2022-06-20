@@ -43,6 +43,7 @@ suricata -c /etc/suricata/suricata.yaml -k none -i eth0 -D
 Create a traffic mirror target \(Target A\) for the EC2 instance\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one\.
++ The Gateway Load Balancer endpoint when the appliance is deployed behind a Gateway Load Balancer
 
 For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 

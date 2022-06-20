@@ -19,6 +19,7 @@ Consider the scenario where you want to mirror inbound TCP and UDP traffic on an
 Create a traffic mirror target for Appliance A \(Target A\)\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one
++ The Gateway Load Balancer endpoint when the appliance is deployed behind a Gateway Load Balancer
 
 For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 
@@ -27,6 +28,7 @@ For more information, see [Create a traffic mirror target](traffic-mirroring-tar
 Create a traffic mirror target \(Target B\) for Appliance B\. Depending on your configuration, the target is one of the following types:
 + The network interface of the monitoring appliance
 + The Network Load Balancer when the appliance is deployed behind one
++ The Gateway Load Balancer endpoint when the appliance is deployed behind a Gateway Load Balancer
 
 For more information, see [Create a traffic mirror target](traffic-mirroring-target.md#create-traffic-mirroring-target)\.
 

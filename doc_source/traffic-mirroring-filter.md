@@ -1,6 +1,6 @@
 # Traffic mirror filters<a name="traffic-mirroring-filter"></a>
 
-Use a traffic mirror filter and its rules to determine the traffic that is mirrored\. A traffic mirror filter contains one or more traffic mirror rules\. You can also mirror certaom network services\.
+Use a traffic mirror filter and its rules to determine the traffic that is mirrored\. A traffic mirror filter contains one or more traffic mirror rules\. You can also mirror certain network services\.
 
 You can define a set of parameters to apply to the traffic mirror source traffic to determine the traffic to mirror\. The following traffic mirror filter rule parameters are available:
 + Traffic direction: Inbound or outbound
@@ -31,7 +31,7 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
 
 1. Choose **Create traffic mirror filter**\.
 
-1. For **Name tag**, enter a name for the traffic mirror filter\.
+1. \(Optional\) For **Name tag**, enter a name for the traffic mirror filter\.
 
 1. \(Optional\) For **Description**, enter a description for the traffic mirror filter\.
 
@@ -39,42 +39,45 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
 
    \[Mirror Amazon DNS traffic\] Select **amazon\-dns**\.
 
-1. \(Optional\) Add inbound rules\. Choose **Inbound rules**, **Add, rule**, and then specify the following information about the traffic mirror source inbound traffic:
-   + **Rule number**: Enter a priority to assign to the rule\.
+1. \(Optional\) For each inbound rule, choose **Inbound rules**, **Add rule**, and then specify the following information:
+   + **Number**: Enter a priority to assign to the rule\.
    + **Rule action**: Choose the action to take for the packet\.
    + **Protocol**: Choose the L4 protocol to assign to the rule\.
    + \(Optional\) **Source port range**: Enter the source port range\.
    + \(Optional\) **Destination port range**: Enter the destination port range\.
    + **Source CIDR block**: Enter a source CIDR block\.
    + **Destination CIDR block**: Enter a destination CIDR block\.
-   + \(Optional\) **Description**: Enter a description for the rule\.
-
-    Repeat for each inbound rule that you want to add\.
+   + **Description**: Enter a description for the rule\.
 
 1. \(Optional\) Add outbound rules\. Choose **Outbound rules**, **Add, rule**, and then specify the following information about the traffic mirror source outbound traffic:
-   + **Rule number**: Enter a priority to assign to the rule\.
+   + **Number**: Enter a priority to assign to the rule\.
    + **Rule action**: Choose the action to take for the packet\.
    + **Protocol**: Choose the IP protocol to assign to the rule\.
    +  \(Optional\) **Source port range**: Enter the source port range\.
    + \(Optional\) **Destination port range**: Enter the destination port range\.
    +  **Source CIDR block**: Enter a source CIDR block\.
    + **Destination CIDR block**: Enter a destination CIDR block\.
-   + \(Optional\) **Description**: Enter a description for the rule\.
+   + **Description**: Enter a description for the rule\.
 
-    Repeat for each outbound rule that you want to add\.
-
-1. \(Optional\) Add or remove a tag\.
-
-   \[Add a tag\] Choose **Add tag** and do the following:
-   + For **Key**, enter the key name\.
-   + For **Value**, enter the key value\.
-
-   \[Remove a tag\] Next to the tag, choose **Remove tag**\.
+1. \(Optional\) For each tag to add, choose **Add new tag** and enter the tag key and tag value\.
 
 1. Choose **Create**\.
 
 **To create a traffic mirror filter using the AWS CLI**  
 Use the [create\-traffic\-mirror\-filter](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-traffic-mirror-filter.html) command\.
+
+## View your traffic mirror filters<a name="view-traffic-mirroring-filter"></a>
+
+**To view your traffic mirror filters using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
+
+1. Select the ID of the traffic mirror filter to open its details page\.
+
+**To view your traffic mirror filters using the AWS CLI**  
+Use the [describe\-traffic\-mirror\-filters](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-traffic-mirror-filters.html) command\.
 
 ## Modify your traffic mirror filter rules<a name="modify-traffic-mirroring-filter-rules"></a>
 
@@ -86,49 +89,33 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the **Region** selector, choose the AWS Region that you used when you created the traffic mirror filter\.
-
 1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
 
-1. Select the traffic mirror filter\.
+1. Select the ID of the traffic mirror filter to open its details page\.
 
-1. Add inbound rules\. Choose **Inbound rules **, **Add inbound rule**, and then specify the following information about the traffic mirror source inbound traffic:
+1. To add inbound rules, choose **Inbound rules **, **Add inbound rule**\. Specify the following information, and then choose **Add rule**:
    + **Rule number**: Enter a priority to assign to the rule\.
+   + \(Optional **Description**: Enter a description for the rule\.
    + **Rule action**: Choose the action to take for the packet\.
    + **Protocol**: Choose the L4 protocol to assign to the rule\.
    + \(Optional\) **Source port range**: Enter the source port range\.
    + \(Optional\) **Destination port range**: Enter the destination port range\.
    + **Source CIDR block**: Enter a source CIDR block\.
    + **Destination CIDR block**: Enter a destination CIDR block\.
-   + \(Optional\) **Description**: Enter a description for the rule\.
 
-    Repeat for each inbound rule that you want to add\.
-
-1. Add outbound rules\. Choose **Outbound rules **, **Add outbound rule**, and then specify the following information about the traffic mirror source outbound traffic:
+1. To add outbound rules, choose **Outbound rules **, **Add outbound rule**\. Specify the following information, and then choose **Add rule**:
    + **Rule number**: Enter a priority to assign to the rule\.
+   + \(Optional\) **Description**: Enter a description for the rule\.
    + **Rule action**: Choose the action to take for the packet\.
    + **Protocol**: Choose the IP protocol to assign to the rule\.
    +  \(Optional\) **Source port range**: Enter the source port range\.
    + \(Optional\) **Destination port range**: Enter the destination port range\.
    +  **Source CIDR block**: Enter a source CIDR block\.
    + **Destination CIDR block**: Enter a destination CIDR block\.
-   + \(Optional\) **Description**: Enter a description for the rule\.
 
-    Repeat for each outbound rule that you want to add\.
+1. To modify a rule, choose **Inbound rules** or **Outbound rules**\. Select the rule and choose **Modify inbound rule** or **Modify outbound rule**\. Update the rule as needed, and then choose **Modify rule**\.
 
-1. Delete an inbound rule\.
-
-   Choose **Inbound rules**, and then do the following:
-   + Select the rule, and then choose **Delete**\.
-   + In the **Delete confirmation** dialog box, enter **delete**, and then choose **Delete**\. 
-
-1. Delete an outbound rule\. Choose **Outbound rules**, and then do the following:
-   + Select the rule, and then choose **Delete**\.
-   + In the **Delete confirmation** dialog box, enter **delete**, and then choose **Delete**\. 
-
-1. Modify a rule\. Choose **Inbound rules**, or **Outbound rules**, and then do the following:
-   + Select the rule, and choose **Modify inbound rule** or **Modify outbound rule**\.
-   + Make the required changes, and then choose **Modify rule**\. 
+1. To delete a rule, choose **Inbound rules** or **Outbound rules**\. Select the rule and choose **Delete**\. When prompted for confirmation, enter **delete**, and then choose **Delete**\.
 
 ## Modify traffic mirror filter tags<a name="modify-traffic-mirroring-filter-tags"></a>
 
@@ -136,21 +123,17 @@ The **Source CIDR block** and **Destination CIDR block** values must both be eit
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the **Region** selector, choose the AWS Region that you used when you created the traffic mirror filter\.
-
 1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
 
-1. Select the traffic mirror filter\.
+1. Select the ID of the traffic mirror filter to open its details page\.
 
-1. Choose **Tags**, **Manage tags**\.
+1. From the **Tags** tab, choose**Manage tags**\.
 
-1. \[Add a tag\] Choose **Add tag** and do the following:
-   + For **Key**, enter the key name\.
-   + For **Value**, enter the key value\.
+1. For each tag to add, choose **Add new tag** and enter the tag key and tag value\.
 
-   \[Remove a tag\] Next to the tag, choose **Remove tag**\.
+1. For each tag to remove, choose **Remove**\.
 
-1. Choose **Save changes**\.
+1. Choose **Save**\.
 
 **To modify the traffic mirror filter tags using the AWS CLI**  
 Use the [create\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-tags.html) command to add a tag\. Use the [delete\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-tags.html) command to remove a tag\.
@@ -161,13 +144,11 @@ Use the [create\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/crea
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the **Region** selector, choose the AWS Region that you used when you created the traffic mirror filter\.
-
 1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
 
 1. Select the traffic mirror filter\.
 
-1. Choose modify Network Services\.
+1. Choose **Actions**, **Modify Network Services**\.
 
 1. \[Mirror Amazon DNS traffic\] Select **amazon dns**\.
 
@@ -176,34 +157,17 @@ Use the [create\-tags](https://docs.aws.amazon.com/cli/latest/reference/ec2/crea
 **To modify the network services traffic mirror filters using the AWS CLI**  
 Use the [modify\-traffic\-mirror\-filter\-network\-services](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-traffic-mirror-filter-network-services.html) command\.
 
-## View your traffic mirror filters<a name="view-traffic-mirroring-filter"></a>
-
-**To view your traffic mirror filters using the console**
-
-1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
-
-1. In the **Region** selector, choose the AWS Region that you used when you created the traffic mirror filter\.
-
-1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
-
-1. Select the traffic mirror filter\.
-
-**To view your traffic mirror filters using the AWS CLI**  
-Use the [describe\-traffic\-mirror\-filters](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-traffic-mirror-filters.html) command\.
-
 ## Delete a traffic mirror filter<a name="delete-traffic-mirroring-filter"></a>
 
 **To delete a traffic mirror filter using the console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the **Region** selector, choose the AWS Region that you used when you created the traffic mirror filter\.
-
 1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
 
-1. Select the traffic mirror filter, and then choose **Delete**\.
+1. Select the traffic mirror filter, and then choose **Actions**, **Delete**\.
 
-1. In the **Delete confirmation** dialog box, enter **delete**, and then choose **Delete**\.
+1. When prompted for confirmation, enter **delete**, and then choose **Delete**\.
 
 **To delete a traffic mirror filter using the AWS CLI**  
 Use the [delete\-traffic\-mirror\-filter](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-traffic-mirror-filter.html) command\.

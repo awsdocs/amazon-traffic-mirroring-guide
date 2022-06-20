@@ -1,16 +1,16 @@
 # What is Traffic Mirroring?<a name="what-is-traffic-mirroring"></a>
 
-Traffic Mirroring is an Amazon VPC feature that you can use to copy network traffic from an elastic network interface of Amazon EC2 instances\. You can then send the traffic to out\-of\-band security and monitoring appliances for:
+Traffic Mirroring is an Amazon VPC feature that you can use to copy network traffic from an elastic network interface of type `interface`\. You can then send the traffic to out\-of\-band security and monitoring appliances for:
 + Content inspection
 + Threat monitoring
 + Troubleshooting
 
-The security and monitoring appliances can be deployed as individual instances, or as a fleet of instances behind a Network Load Balancer with a UDP listener\. Traffic Mirroring supports filters and packet truncation, so that you only extract the traffic of interest to monitor by using monitoring tools of your choice\.
+The security and monitoring appliances can be deployed as individual instances, or as a fleet of instances behind either a Network Load Balancer with a UDP listener or a Gateway Load Balancer with a UDP listener\. Traffic Mirroring supports filters and packet truncation, so that you only extract the traffic of interest to monitor by using monitoring tools of your choice\.
 
 ## Traffic Mirroring concepts<a name="concepts"></a>
 
 The following are the key concepts for Traffic Mirroring:
-+ **Source** — A network interface with the type `instance`\.
++ **Source** — The network interface to monitor\.
 + **Target** — The destination for mirrored traffic\.
 + **Filter** — A set of rules that defines the traffic that is copied in a traffic mirror session\.
 + **Session** — An entity that describes Traffic Mirroring from a source to a target using filters\.
