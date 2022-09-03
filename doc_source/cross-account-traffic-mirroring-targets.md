@@ -8,8 +8,6 @@ The traffic mirror target is visible to shared accounts in their `DescribeTraffi
 
 Traffic mirror sessions that are created in a different account than the traffic mirror target are visible in `DescribeTrafficMirrorSession` API calls that are made by the traffic mirror target owner\.
 
-
-
 ## Share a traffic mirror target<a name="tm-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a traffic mirror target across accounts\. Use the following procedure to share a traffic mirror target that you own\.
