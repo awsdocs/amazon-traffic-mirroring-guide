@@ -22,7 +22,7 @@
 ## Traffic bandwidth and prioritization<a name="traffic-mirroring-bandwidth-routing"></a>
 + Mirrored traffic counts toward instance bandwidth\. For example, if you mirror a network interface that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic, the instance must handle 4 Gbps of traffic \(1 Gbps inbound, 1 Gbps mirrored inbound, 1 Gbps outbound, and 1 Gbps mirrored outbound\)\.
 + Production traffic has a higher priority than mirrored traffic when there is traffic congestion\. As a result, mirrored traffic is dropped when there is congestion\.
-+ Each Gateway Load Balancer endpoint can support a bandwidth of up to 40 Gbps\. For more information about Gateway Load Balancer endpoint quotas, see [Availability Zones and load balancer nodes](https://docs.aws.amazon.com/latest/privatelink/create-gateway-load-balancer-endpoint-service.html#considerations-gateway-load-balancer-endpoint-service) in the *AWS PrivateLink Guide*\.
++ Each Gateway Load Balancer endpoint can support a bandwidth of up to 10 Gbps per Availability Zone and automatically scales up to 100 Gbps\. For more information about Gateway Load Balancer endpoint quotas, see [Availability Zones and load balancer nodes](https://docs.aws.amazon.com/latest/privatelink/create-gateway-load-balancer-endpoint-service.html#considerations-gateway-load-balancer-endpoint-service) in the *AWS PrivateLink Guide*\.
 
 ## Network Load Balancer<a name="traffic-mirroring-considerations-nlb"></a>
 
