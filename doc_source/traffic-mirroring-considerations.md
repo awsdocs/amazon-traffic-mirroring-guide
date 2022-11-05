@@ -6,6 +6,7 @@
 + An elastic network interface cannot be a traffic mirror target and a traffic mirror session source at the same time\. 
 + When you delete a network interface that is a traffic mirror source, the traffic mirror sessions that are associated with the source are automatically deleted\. 
 + Flow logs do not capture mirrored traffic\. 
++ You might experience out\-of\-order delivery of mirrored packets when you use a Network Load Balancer or Gateway Load Balancer endpoint as your traffic mirror target\. If your monitoring appliance cannot handle out\-of\-order packets, we recommend using an elastic network interface as your traffic mirror target\. 
 
 ## Routing and security group rules evaluation<a name="traffic-mirroring-considerations-routing"></a>
 + Encapsulated mirror traffic is routed by using the VPC route table\. Make sure that your route table is configured to send the mirrored traffic to the correct traffic mirror target\. 
@@ -22,7 +23,7 @@
 ## Traffic bandwidth and prioritization<a name="traffic-mirroring-bandwidth-routing"></a>
 + Mirrored traffic counts toward instance bandwidth\. For example, if you mirror a network interface that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic, the instance must handle 4 Gbps of traffic \(1 Gbps inbound, 1 Gbps mirrored inbound, 1 Gbps outbound, and 1 Gbps mirrored outbound\)\.
 + Production traffic has a higher priority than mirrored traffic when there is traffic congestion\. As a result, mirrored traffic is dropped when there is congestion\.
-+ By default, each Gateway Load Balancer endpoint can support a bandwidth of up to 10 Gbps per Availability Zone and automatically scales up to 100 Gbps\. For more information, see [AWS PrivateLink quotas](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-limits-endpoints.html) in the *AWS PrivateLink Guide*\.
++ By default, each Gateway Load Balancer endpoint can support a bandwidth of up to 10 Gbps per Availability Zone and automatically scales up to 100 Gbps\. For more information, [AWS PrivateLink quotas](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-limits-endpoints.html) in the *AWS PrivateLink Guide*\.
 
 ## Network Load Balancer<a name="traffic-mirroring-considerations-nlb"></a>
 

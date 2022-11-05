@@ -10,7 +10,7 @@ The following non\-Nitro instance types are currently supported:
 + C4, D2, G3, G3s, H1, I3, M4, P2, P3, R4, X1, X1e
 
 Traffic Mirroring is not available on the following instance types:
-+ These current generation instances: C6a, C6gn, C6i, Hpc6a, I4i, Im4gn, Is4gen, M6a, M6i, R6i, T2, X2idn, X2iedn, X2iezn
++ These current generation instances: C6a, C6gn, C6i, C6id, Hpc6a, I4i, Im4gn, Is4gen, M6a, M6i, R6i, R6id, T2, Trn1, X2idn, X2iedn, X2iezn
 + Bare metal instances
 + [Previous generation instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes)
 
@@ -62,7 +62,7 @@ The following table lists the Traffic Mirroring throughput limits\.
 
 | Quota | Default | Adjustable | 
 | --- | --- | --- | 
-|  Maximum throughput through a single Gateway Load Balancer endpoint  | 40 Gbps | No | 
+|  Maximum throughput through a single Gateway Load Balancer endpoint  | 100 Gbps | No | 
 
 ### Packets<a name="traffic-mirroring-packets"></a>
 
