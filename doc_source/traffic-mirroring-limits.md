@@ -10,7 +10,7 @@ The following non\-Nitro instance types are currently supported:
 + C4, D2, G3, G3s, H1, I3, M4, P2, P3, R4, X1, X1e
 
 Traffic Mirroring is not available on the following instance types:
-+ These current generation instances: C6a, C6gn, C6i, C6id, Hpc6a, I4i, Im4gn, Is4gen, M6a, M6i, R6i, R6id, T2, Trn1, X2idn, X2iedn, X2iezn
++  These current generation instances: C6a, C6gn, C6i, C6id, C6in, C7g, Hpc6a, I4i, Im4gn, Is4gen, M6a, M6i, M6in, M7g, R6a, R6i, R6id, R6idn, R6in, R7g, T2, Trn1, X2idn, X2iedn, X2iezn
 + Bare metal instances
 + [Previous generation instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes)
 
@@ -54,6 +54,7 @@ The following table lists the Traffic Mirroring filter limits\.
 | --- | --- | --- | 
 |  Maximum number of filters per account  |  10,000  | No | 
 | Maximum number of sessions per source network interface |  3  | No | 
+| Maximum number of filter rules per filter | 10 | No | 
 
 ### Throughput<a name="traffic-mirroring-throughput"></a>
 
@@ -93,11 +94,11 @@ The Elastic Network Adapter \(ENA\) provides checksum offloading capabilities\. 
 + If the mirror packet is truncated, the mirror packet L4 checksum is not calculated\.
 + If any part of the L3 header is truncated, the L3 checksum is not calculated\.
 
-Use the following commands to disable ENA checksum offloading on Amazon Linux 2 AMI:
+If this causes issues, you can disable ENA checksum offloading on the ENA for the source\. For example, use the following commands on Amazon Linux 2:
 
 ```
-[ec2-user@ip-11-0-0-166 ~]$ sudo ethtool --offload eth0 tx off 
-[ec2-user@ip-11-0-0-166 ~]$ sudo ethtool --show-offload eth0
+[ec2-user ~]$ sudo ethtool --offload eth0 tx off 
+[ec2-user ~]$ sudo ethtool --show-offload eth0
 Features for eth0:
 rx-checksumming: on
 tx-checksumming: off

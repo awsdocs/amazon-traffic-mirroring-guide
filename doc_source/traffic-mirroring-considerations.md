@@ -20,14 +20,27 @@
 
     For example, if an 8996 byte packet is mirrored, and the traffic mirror target MTU value is 9001 bytes, the mirror encapsulation results in the mirrored packet being greater than the MTU value\. In this case, the mirror packet is truncated\. To prevent mirror packets from being truncated, set the traffic mirror source interface MTU value to 54 bytes less than the traffic mirror target MTU value for IPv4 and 74 bytes less than the traffic mirror target MTU value when you use IPv6\. Therefore, the maximum MTU value supported by Traffic Mirroring with no packet truncation is 8947 bytes\. For more information about configuring the network MTU value, see [ Network Maximum Transmission Unit \(MTU\) for Your EC2 Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/network_mtu.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
+## Traffic mirroring source limits<a name="tm-source-limits"></a>
+
+Only elastic network interfaces \(ENIs\) can be traffic mirror sources\. Load balancers, such as Application Load Balancers \(ALBs\), Network Load Balancers \(NLBs\), or Classic Load Balancers \(CLBs\), are not supported as traffic mirror sources\.
+
 ## Traffic bandwidth and prioritization<a name="traffic-mirroring-bandwidth-routing"></a>
 + Mirrored traffic counts toward instance bandwidth\. For example, if you mirror a network interface that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic, the instance must handle 4 Gbps of traffic \(1 Gbps inbound, 1 Gbps mirrored inbound, 1 Gbps outbound, and 1 Gbps mirrored outbound\)\.
 + Production traffic has a higher priority than mirrored traffic when there is traffic congestion\. As a result, mirrored traffic is dropped when there is congestion\.
 + By default, each Gateway Load Balancer endpoint can support a bandwidth of up to 10 Gbps per Availability Zone and automatically scales up to 100 Gbps\. For more information, see [AWS PrivateLink quotas](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-limits-endpoints.html) in the *AWS PrivateLink Guide*\.
 
+## Traffic Mirroring charges<a name="traffic-mirroring-delete-instance"></a>
+
+You'll continue to be charged for Traffic Mirroring until you delete all active traffic mirroring sessions on Amazon EC2 instance network interfaces\. This applies in the following scenarios:
++ You detached the ENI of the mirror source
++ You stopped/terminated the mirror source instance
++ You switched the source instance type to an unsupported instance type
+
+For the steps to delete a traffic mirror session, see [Delete a traffic mirror session](traffic-mirroring-session.md#delete-traffic-mirroring-session)\.
+
 ## Network Load Balancer<a name="traffic-mirroring-considerations-nlb"></a>
 
-The following rules apply when the Traffic Mirroring is a Network Load Balancer
+The following rules apply when the Traffic Mirroring target is a Network Load Balancer
 + There must be UDP listeners on port 4789\. 
 + If you do not have UDP listeners on the Network Load Balancer, you can still use the Network Load Balancer as a target\. However, Traffic Mirroring cannot occur because there are no UDP listeners\.
 + If you remove the UDP listeners from a Network Load Balancer that is a traffic mirror target, Traffic Mirroring fails without an error indication\. 
@@ -37,7 +50,7 @@ The following rules apply when the Traffic Mirroring is a Network Load Balancer
 
 ## Gateway Load Balancer<a name="traffic-mirroring-considerations-glb"></a>
 
-The following rules apply when the Traffic Mirroring is a Gateway Load Balancer
+The following rules apply when the Traffic Mirroring target is a Gateway Load Balancer
 + A listener for Gateway Load Balancers listens for all IP packets across all ports, and forwards traffic to the target group that you select\. 
 + The maximum MTU supported by the Gateway Load Balancer is 8500\. VPC Traffic Mirroring adds 54 bytes of additional headers to the original packet payload when using IPv4, and 74 bytes when using IPv6\. Therefore, the maximum packet size that can be delivered to the appliance without truncation is `8500 – 54 = 8446` when using IPv4, or `8500 – 74 = 8426` when using IPv6\. 
 + You can use the `BytesProcessed` and `PacketsDropped` CloudWatch metrics for Amazon VPC endpoints to monitor the volume of traffic being sent over the Gateway Load Balancer endpoint\. You can also use existing Amazon VPC Traffic Mirroring CloudWatch metrics for traffic volumes for each of the traffic mirroring sessions\. For more information, see [Monitor mirrored traffic using Amazon CloudWatch](traffic-mirror-cloudwatch.md)\. 

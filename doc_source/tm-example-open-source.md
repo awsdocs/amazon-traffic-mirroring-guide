@@ -2,9 +2,9 @@
 
 You can use open\-source tools to monitor network traffic from Amazon EC2 instances\. The following tools work with Traffic Mirroring:
 + **Zeek** — For more information, see the [Zeek Network Monitor Security website](https://www.zeek.org/)\.
-+ **Suricata** — For more information see the [Suricata website](https://suricata-ids.org/)\.
++ **Suricata** — For more information see the [Suricata website](https://suricata.io/)\.
 
-These open\-source tools support VXLAN decapsulation, and they can be used at scale to monitor VPC traffic\. For information about how Zeek handles VXLAN support and to download the code, see [Zeek vxlan](https://github.com/zeek/zeek/tree/master/src/analyzer/protocol/vxlan) on the GitHub website\. For information about how Suricata handles VXLAN support and to download the code, see [Suricata](https://github.com/OISF/suricata) on the GitHub website\.
+These open\-source tools support VXLAN decapsulation, and they can be used at scale to monitor VPC traffic\. For information about how Zeek handles VXLAN support and to download the code, see [Zeek vxlan](https://github.com/zeek/zeek/tree/master/src/packet_analysis/protocol/vxlan) on the GitHub website\. For information about how Suricata handles VXLAN support and to download the code, see [Suricata](https://github.com/OISF/suricata) on the GitHub website\.
 
 The following example uses the Suricata open\-source tool\. You can follow similar steps for Zeek\.
 
