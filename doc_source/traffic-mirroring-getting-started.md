@@ -1,6 +1,10 @@
 # Get started with Traffic Mirroring<a name="traffic-mirroring-getting-started"></a>
 
-The following tasks help you to become familiar with traffic mirror targets, filters, and sessions\. Follow the instructions to create a traffic mirror target and filter, and then use those resources to create a session\.
+To get started with Traffic Mirroring, we'll explore traffic mirror targets, filters, and sessions\.
+
+A mirror session is a connection between a mirror source and a mirror target\. In the following diagram, both the mirror source and the mirror target are EC2 instances\. The mirror filter determines which network packets are mirrored\. For example, you can add inbound and outbound rules to the filter such that it rejects SSH traffic but accepts all other traffic\. Traffic Mirroring applies the filter rules, and then copies the accepted traffic from the network interface of the mirror source to the network interface of the mirror target\. You can run your capture and analysis tools on the packets delivered to the mirror target\.
+
+![\[A traffic mirror session where the mirror target is an EC2 instance.\]](http://docs.aws.amazon.com/vpc/latest/mirroring/images/get-started.png)
 
 **Topics**
 + [Prerequisites](#traffic-mirroring-prerequisites)
@@ -10,26 +14,22 @@ The following tasks help you to become familiar with traffic mirror targets, fil
 + [Step 4: Analyze the data](#analyze-data)
 
 ## Prerequisites<a name="traffic-mirroring-prerequisites"></a>
-
-Review the Traffic Mirroring considerations\. For more information, see [Traffic Mirroring considerations](traffic-mirroring-considerations.md)\. Also verify the following\.
-+ Make sure that the traffic mirror source and traffic mirror target are either: 
-  + In the same VPC, or
-  + In different VPCs that are connected via VPC peering, a transit gateway, or a Gateway Load Balancer endpoint\.
-+ The traffic mirror target instance must allow traffic to UDP port 4789\.
++ The traffic mirror source and traffic mirror target must be in the same VPC or in VPCs that are connected \(for example, using VPC peering or a transit gateway\)\.
++ The traffic mirror target must allow traffic to UDP port 4789\.
 + The traffic mirror source must have a route table entry for the traffic mirror target\.
 + Security group rules and network ACL rules on the traffic mirror target cannot drop the mirrored traffic from the traffic mirror source\.
 
 ## Step 1: Create the traffic mirror target<a name="step-create-traffic-mirroring-target"></a>
 
-Create a destination for mirrored traffic\.
+Create a destination for the mirrored traffic\.
 
-**Create a traffic mirror target**
+**To create a traffic mirror target**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the **Region** selector, choose the AWS Region that you used when you created the VPCs\.
+1. In the **Region** selector, choose the AWS Region that you used when you created the mirror target\.
 
-1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Targets**\.
+1. On the navigation pane, choose **Traffic Mirroring**, **Mirror targets**\.
 
 1. Choose **Create traffic mirror target**\.
 
@@ -37,9 +37,9 @@ Create a destination for mirrored traffic\.
 
 1. \(Optional\) For **Description**, enter a description for the traffic mirror target\.
 
-1. For **Target type**, choose the traffic mirror target type\.
+1. For **Target type**, choose **Network Interface**\.
 
-1. For **Target**, choose the traffic mirror target\.
+1. For **Target**, choose the network interface of the instance\.
 
 1. \(Optional\) For each tag to add, choose **Add new tag** and enter the tag key and tag value\.
 
@@ -51,7 +51,7 @@ A traffic mirror filter contains one or more traffic mirror rules, and a set of 
 
 **To create a traffic mirror filter**
 
-1. On the navigation pane, choose **Traffic Mirroring**, **Mirror Filters**\.
+1. On the navigation pane, choose **Traffic Mirroring**, **Mirror filters**\.
 
 1. Choose **Create traffic mirror filter**\.
 
@@ -59,29 +59,15 @@ A traffic mirror filter contains one or more traffic mirror rules, and a set of 
 
 1. \(Optional\) For **Description**, enter a description for the traffic mirror filter\.
 
-1. \(Optional\) Mirror network services\.
-
-   \[Mirror Amazon DNS traffic\] Select **amazon\-dns**\.
-
-1. \(Optional\) For each inbound rule, choose **Inbound rules**, **Add rule**, and then specify the following information:
-   + **Number**: Enter a priority to assign to the rule\.
-   + **Rule action**: Choose the action to take for the packet\.
-   + **Protocol**: Choose the L4 protocol to assign to the rule\.
-   + \(Optional\) **Source port range**: Enter the source port range\.
-   + \(Optional\) **Destination port range**: Enter the destination port range\.
-   + **Source CIDR block**: Enter a source CIDR block\.
-   + **Destination CIDR block**: Enter a destination CIDR block\.
-   + **Description**: Enter a description for the rule\.
-
-1. \(Optional\) For each outbound rule, choose **Outbound rules**, **Add rule**, and then specify the following information:
-   + **Number**: Enter a priority to assign to the rule\.
-   + **Rule action**: Choose the action to take for the packet\.
-   + **Protocol**: Choose the IP protocol to assign to the rule\.
-   +  \(Optional\) **Source port range**: Enter the source port range\.
-   + \(Optional\) **Destination port range**: Enter the destination port range\.
-   +  **Source CIDR block**: Enter a source CIDR block\.
-   + **Destination CIDR block**: Enter a destination CIDR block\.
-   + **Description**: Enter a description for the rule\.
+1. For each rule, inbound or outbound, choose **Add rule**, and then specify the following information:
+   + **Number**: The rule priority\.
+   + **Rule action**: Indicates whether to accept or reject the packets\.
+   + **Protocol**: The protocol\.
+   + \(Optional\) **Source port range**: The source port range\.
+   + \(Optional\) **Destination port range**: The destination port range\.
+   + **Source CIDR block**: The source CIDR block\.
+   + **Destination CIDR block**: The destination CIDR block\.
+   + **Description**: A description for the rule\.
 
 1. \(Optional\) For each tag to add, choose **Add new tag** and enter the tag key and tag value\.
 
@@ -93,7 +79,7 @@ Create a traffic mirror session that sends mirrored packets from the source to a
 
 **To create a traffic mirror session**
 
-1. In the navigation pane, choose **Traffic Mirroring**, **Mirror Sessions**\.
+1. In the navigation pane, choose **Traffic Mirroring**, **Mirror sessions**\.
 
 1. Choose **Create traffic mirror session**\.
 
@@ -101,31 +87,23 @@ Create a traffic mirror session that sends mirrored packets from the source to a
 
 1. \(Optional\) For **Description**, enter a description for the traffic mirror session\.
 
-1. For **Mirror source**, choose the network interface of the instance that you want to monitor\. 
+1. For **Mirror source**, choose the network interface of the mirror source\. 
 
-1. For **Mirror target**, choose the traffic mirror target\.
+1. For **Mirror target**, choose your traffic mirror target\.
 
 1. For **Additional settings**, do the following:
 
-   1. For **Session number**, enter the session number\. The valid values are 1 to 32,766, where 1 is the highest priority\.
-
-      The session number determines the order that traffic mirror sessions are evaluated in both of the following situations:
-      + When an interface is used by multiple sessions\.
-      + When an interface is used by different traffic mirror targets and traffic mirror filters\.
-
-      Traffic is only mirrored one time\.
+   1. For **Session number**, enter **1**, which is the highest priority\.
 
    1. \(Optional\) For **VNI**, enter the VXLAN ID to use for the traffic mirror session\. For more information about the VXLAN protocol, see [RFC 7348](https://tools.ietf.org/html/rfc7348)\.
 
       If you do not enter a value, we assign a random unused number\.
 
-   1. \(Optional\) For **Packet Length**, enter the number of bytes in each packet to mirror\.
+   1. \(Optional\) For **Packet length**, enter the number of bytes in each packet to mirror\.
 
-      If you do not want to mirror the entire packet, set **Packet Length** to the number of bytes in each packet to mirror\. For example, if you set this value to 100, the first 100 bytes after the VXLAN header that meet the filter criteria are copied to the target\.
+      To mirror the entire packet, do not enter a value\. To mirror only a portion of each packet, set this value to the number of bytes to mirror\. For example, if you set this value to 100, the first 100 bytes after the VXLAN header that meet the filter criteria are copied to the target\.
 
-      To mirror the entire packet, do not enter a value in this field\.
-
-   1. For **Filter**, choose the traffic mirror filter that determines what traffic gets mirrored\.
+   1. For **Filter**, choose your traffic mirror filter\.
 
 1. \(Optional\) For each tag to add, choose **Add new tag** and enter the tag key and tag value\.
 
@@ -133,4 +111,4 @@ Create a traffic mirror session that sends mirrored packets from the source to a
 
 ## Step 4: Analyze the data<a name="analyze-data"></a>
 
-After the mirrored traffic is on the traffic mirror target, you can use a tool from the [AWS Partner Network](https://partners.amazonaws.com/search/partners/?keyword=traffic%20mirroring) to analyze the data\.
+After the mirrored traffic is copied to the traffic mirror target, you can use a tool from the [AWS Partner Network](https://partners.amazonaws.com/search/partners/?keyword=traffic%20mirroring) to analyze the data\.

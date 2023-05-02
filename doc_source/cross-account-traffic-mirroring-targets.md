@@ -8,6 +8,11 @@ The traffic mirror target is visible to shared accounts in their `DescribeTraffi
 
 Traffic mirror sessions that are created in a different account than the traffic mirror target are visible in `DescribeTrafficMirrorSession` API calls that are made by the traffic mirror target owner\.
 
+**Topics**
++ [Share a traffic mirror target](#tm-sharing)
++ [Accept a resource share](#tm-share-accept)
++ [Delete a resource share](#tm-delete-share)
+
 ## Share a traffic mirror target<a name="tm-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a traffic mirror target across accounts\. Use the following procedure to share a traffic mirror target that you own\.
@@ -66,4 +71,4 @@ When you delete a shared traffic mirror target that is in use, the traffic mirro
 
 1. Choose **Delete**\.
 
-1. In the **Delete confirmation** dialog box, enter **delete**, and then choose **Delete**\.
+1. When prompted for confirmation, enter **delete**, and then choose **Delete**\.
